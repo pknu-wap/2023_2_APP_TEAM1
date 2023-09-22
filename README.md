@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
 <br>
 <a href="https://wonderful-report-e58.notion.site/Digital-Therapeutics-2e807e0fe933492282105bd76665ba36?pvs=4" target="_blank"><img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white"/></a>
-<a hre="https://github.com/pknu-wap/2023_2_APP_TEAM1" target="_blank"><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/></a>
+<a href="https://github.com/pknu-wap/2023_2_APP_TEAM1" target="_blank"><img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/></a>
 
 </div>
 
