@@ -4,11 +4,11 @@
 
 <h3>💻 Tech Stack 💻</h3>
 
-<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=fireabase&logoColor=white"/>
+<img src="https://img.shields.io/badge/firebase-FFCA28?style=flat-square&logo=fireabase&logoColor=white"/>
 <img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white"/>
 <img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/>
 <br>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html&logoColor=white"/>
+<img src="https://img.shields.io/badge/Html5-E34F26?style=flat-square&logo=html&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
 <br>
 <a href="https://wonderful-report-e58.notion.site/Digital-Therapeutics-2e807e0fe933492282105bd76665ba36?pvs=4" target="_blank"><img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white"/></a>
