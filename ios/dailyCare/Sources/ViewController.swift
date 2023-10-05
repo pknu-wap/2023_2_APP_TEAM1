@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     // 데일리 케어 아이콘
     lazy var mainIcon: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(named: "main2.png") // 이미지 이름을 설정하십시오
+        let image = UIImage(named: "DailyCareLogo.png") // 이미지 이름을 설정하십시오
         imageView.image = image
         return imageView
     }()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     // 카카오 로그인 버튼
     lazy var KakaoLoginButton = { (_ title: String, _ action: Selector) -> UIButton in
         let button = UIButton()
-        let image = UIImage(named: "login2.png")
+        let image = UIImage(named: "kakao.png")
         let imageSize2 = CGSize(width: 40, height: 40)
         button.setImage(image?.resize(targetSize: imageSize2), for: .normal)
         button.addTarget(self, action: action, for: .touchUpInside)
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     // 카카오 로그아웃 버튼
     lazy var KakaoLogoutButton = { (_ title: String, _ action: Selector) -> UIButton in
         let button = UIButton()
-        let image = UIImage(named: "logoutBtn.png")
+        let image = UIImage(named: "logout.png")
         let imageSize = CGSize(width: 50, height: 50)
         button.setImage(image?.resize(targetSize: imageSize), for: .normal)
         button.addTarget(self, action: action, for: .touchUpInside)
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     // 일반 로그인 버튼
     lazy var loginButtion = {
         let button = UIButton()
-        let image = UIImage(named: "loginFB.png")
+        let image = UIImage(named: "login.png")
         let imageSize2 = CGSize(width: 200, height: 200)
         button.setImage(image?.resize(targetSize: imageSize2), for: .normal)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)

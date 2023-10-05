@@ -28,15 +28,10 @@
 		EFED71852ACB02B1004ED7C7 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = EFED71842ACB02B1004ED7C7 /* KakaoSDKUser */; };
 		EFED71882ACB0C78004ED7C7 /* KakaoAuthViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */; };
 		EFED718B2ACB0E1A004ED7C7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFED718A2ACB0E1A004ED7C7 /* SnapKit */; };
-		EFED718D2ACE8549004ED7C7 /* logout2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFED718C2ACE8549004ED7C7 /* logout2.png */; };
-		EFED71912ACE8561004ED7C7 /* loginFB.png in Resources */ = {isa = PBXBuildFile; fileRef = EFED71902ACE8561004ED7C7 /* loginFB.png */; };
-		EFED71932ACE8564004ED7C7 /* login2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFED71922ACE8564004ED7C7 /* login2.png */; };
-		EFED71952ACE8566004ED7C7 /* main2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFED71942ACE8566004ED7C7 /* main2.png */; };
-		EFED71972ACE86F9004ED7C7 /* logoutBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = EFED71962ACE86F9004ED7C7 /* logoutBtn.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EFED71542ACB0148004ED7C7 /* kakaologinUIkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kakaologinUIkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFED71542ACB0148004ED7C7 /* dailyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFED71572ACB0148004ED7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EFED715B2ACB0148004ED7C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,11 +41,6 @@
 		EFED71652ACB014A004ED7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFED71862ACB0765004ED7C7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewM.swift; sourceTree = "<group>"; };
-		EFED718C2ACE8549004ED7C7 /* logout2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logout2.png; path = ../../../logout2.png; sourceTree = "<group>"; };
-		EFED71902ACE8561004ED7C7 /* loginFB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginFB.png; path = ../../../loginFB.png; sourceTree = "<group>"; };
-		EFED71922ACE8564004ED7C7 /* login2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = login2.png; path = ../../../login2.png; sourceTree = "<group>"; };
-		EFED71942ACE8566004ED7C7 /* main2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main2.png; path = ../../../main2.png; sourceTree = "<group>"; };
-		EFED71962ACE86F9004ED7C7 /* logoutBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoutBtn.png; path = ../../../logoutBtn.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +68,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12DB4A502ACEB30300308BC6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */,
+				EFED715B2ACB0148004ED7C7 /* ViewController.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		12DB4A512ACEB43D00308BC6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EFED715D2ACB0148004ED7C7 /* Main.storyboard */,
+				EFED71622ACB014A004ED7C7 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		12DB4A522ACEB4EC00308BC6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EFED71602ACB014A004ED7C7 /* Assets.xcassets */,
+				12DB4A512ACEB43D00308BC6 /* Storyboards */,
+				EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */,
+				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		EFED714B2ACB0148004ED7C7 = {
 			isa = PBXGroup;
 			children = (
-				EFED71562ACB0148004ED7C7 /* kakaologinUIkit */,
+				EFED71562ACB0148004ED7C7 /* dailyCare */,
 				EFED71552ACB0148004ED7C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,38 +109,28 @@
 		EFED71552ACB0148004ED7C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EFED71542ACB0148004ED7C7 /* kakaologinUIkit.app */,
+				EFED71542ACB0148004ED7C7 /* dailyCare.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EFED71562ACB0148004ED7C7 /* kakaologinUIkit */ = {
+		EFED71562ACB0148004ED7C7 /* dailyCare */ = {
 			isa = PBXGroup;
 			children = (
-				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
-				EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */,
-				EFED715B2ACB0148004ED7C7 /* ViewController.swift */,
-				EFED715D2ACB0148004ED7C7 /* Main.storyboard */,
-				EFED71602ACB014A004ED7C7 /* Assets.xcassets */,
-				EFED71622ACB014A004ED7C7 /* LaunchScreen.storyboard */,
+				12DB4A522ACEB4EC00308BC6 /* Resources */,
+				12DB4A502ACEB30300308BC6 /* Sources */,
 				EFED71652ACB014A004ED7C7 /* Info.plist */,
 				EFED71862ACB0765004ED7C7 /* Config.xcconfig */,
-				EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */,
-				EFED718C2ACE8549004ED7C7 /* logout2.png */,
-				EFED71902ACE8561004ED7C7 /* loginFB.png */,
-				EFED71922ACE8564004ED7C7 /* login2.png */,
-				EFED71962ACE86F9004ED7C7 /* logoutBtn.png */,
-				EFED71942ACE8566004ED7C7 /* main2.png */,
 			);
-			path = kakaologinUIkit;
+			path = dailyCare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EFED71532ACB0148004ED7C7 /* kakaologinUIkit */ = {
+		EFED71532ACB0148004ED7C7 /* dailyCare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EFED71682ACB014A004ED7C7 /* Build configuration list for PBXNativeTarget "kakaologinUIkit" */;
+			buildConfigurationList = EFED71682ACB014A004ED7C7 /* Build configuration list for PBXNativeTarget "dailyCare" */;
 			buildPhases = (
 				EFED71502ACB0148004ED7C7 /* Sources */,
 				EFED71512ACB0148004ED7C7 /* Frameworks */,
@@ -130,7 +140,7 @@
 			);
 			dependencies = (
 			);
-			name = kakaologinUIkit;
+			name = dailyCare;
 			packageProductDependencies = (
 				EFED716C2ACB02B1004ED7C7 /* KakaoSDK */,
 				EFED716E2ACB02B1004ED7C7 /* KakaoSDKAuth */,
@@ -148,7 +158,7 @@
 				EFED718A2ACB0E1A004ED7C7 /* SnapKit */,
 			);
 			productName = kakaologinUIkit;
-			productReference = EFED71542ACB0148004ED7C7 /* kakaologinUIkit.app */;
+			productReference = EFED71542ACB0148004ED7C7 /* dailyCare.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +176,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EFED714F2ACB0148004ED7C7 /* Build configuration list for PBXProject "kakaologinUIkit" */;
+			buildConfigurationList = EFED714F2ACB0148004ED7C7 /* Build configuration list for PBXProject "dailyCare" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,7 +193,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EFED71532ACB0148004ED7C7 /* kakaologinUIkit */,
+				EFED71532ACB0148004ED7C7 /* dailyCare */,
 			);
 		};
 /* End PBXProject section */
@@ -194,12 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Resources */,
-				EFED71912ACE8561004ED7C7 /* loginFB.png in Resources */,
 				EFED71612ACB014A004ED7C7 /* Assets.xcassets in Resources */,
-				EFED71952ACE8566004ED7C7 /* main2.png in Resources */,
-				EFED718D2ACE8549004ED7C7 /* logout2.png in Resources */,
-				EFED71932ACE8564004ED7C7 /* login2.png in Resources */,
-				EFED71972ACE86F9004ED7C7 /* logoutBtn.png in Resources */,
 				EFED715F2ACB0148004ED7C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +370,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3DG6C2JMKQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = kakaologinUIkit/Info.plist;
+				INFOPLIST_FILE = dailyCare/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -393,7 +398,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3DG6C2JMKQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = kakaologinUIkit/Info.plist;
+				INFOPLIST_FILE = dailyCare/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -415,7 +420,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EFED714F2ACB0148004ED7C7 /* Build configuration list for PBXProject "kakaologinUIkit" */ = {
+		EFED714F2ACB0148004ED7C7 /* Build configuration list for PBXProject "dailyCare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EFED71662ACB014A004ED7C7 /* Debug */,
@@ -424,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EFED71682ACB014A004ED7C7 /* Build configuration list for PBXNativeTarget "kakaologinUIkit" */ = {
+		EFED71682ACB014A004ED7C7 /* Build configuration list for PBXNativeTarget "dailyCare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EFED71692ACB014A004ED7C7 /* Debug */,
