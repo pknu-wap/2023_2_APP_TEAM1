@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            body {
+                background-color: whitesmoke;
+            }
+            table {
+                border: 1px solid black;
+                width: 100%;
+            }
+            table td {
+                text-align: center;
+            }
+            .cotainer {
+                width: 10px;
+                height: 10px;
+            }
+        </style>
+        <script>
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth() + 1;
+            var date = today.getDate();
+
+            // 행 추가
+            function addRow() {
+                var table = document.getElementById("myTable");
+                var rowCount = table.rows.length;
+                var row = table.insertRow(rowCount);
+            
+                for (var i = 0; i < 7; i++) {
+                    var cell = row.insertCell(i);
+                    var input = document.createElement("input");
+                    input.type = "text";
+                    input.value = ""; 
+
+                    if (i==0) {
+                        input.placeholder = year + "-" + month + "-" + date;
+                    }
+                    if (i==2) {
+                        input.placeholder = "010-0000-0000";
+                    }
+                    cell.appendChild(input);
+                }
+
+                var deleteButton = document.createElement("button");
+                deleteButton.innerHTML = "삭제";
+                deleteButton.onclick = function() {
+                    deleteRow(row);
+                };
+                var deleteCell = row.insertCell(7);
+                deleteCell.appendChild(deleteButton);
+            }
+
+            // 행 삭제 
+            function deleteRow(row) {
+                var table = document.getElementById("myTable");
+                table.deleteRow(row.rowIndex);
+            }
+        </script>
+        <body>
+            <h1>
+                진료 기록
+            </h1><hr>
+            <div>
+                <form action="submit.php" method="post">
+                <input type="submit" value="입력 완료"></form>
+            <div>
+                <button onclick="addRow()">+</button>
+            </div>
+            <table id="myTable" border="1">
+                <tr>
+                    <td>일자</td>
+                    <td>환자명</td>
+                    <td>연락처</td>
+                    <td>성별</td>
+                    <td>질병</td>
+                    <td>증상</td>
+                    <td>처방약</td>
+                </tr>
+            </table>
+        </body>
+    </head>
+</html> 
