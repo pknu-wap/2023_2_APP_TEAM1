@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12D2424A2ACFCD940079D386 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12D242492ACFCD940079D386 /* GoogleService-Info.plist */; };
+		12D2424E2ACFCFE80079D386 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 12D2424D2ACFCFE80079D386 /* FirebaseAnalytics */; };
+		12D242502ACFCFE80079D386 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 12D2424F2ACFCFE80079D386 /* FirebaseAnalyticsOnDeviceConversion */; };
+		12D242522ACFCFE80079D386 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12D242512ACFCFE80079D386 /* FirebaseAnalyticsSwift */; };
+		12D242542ACFCFE80079D386 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 12D242532ACFCFE80079D386 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71572ACB0148004ED7C7 /* AppDelegate.swift */; };
 		EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */; };
 		EFED715C2ACB0148004ED7C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED715B2ACB0148004ED7C7 /* ViewController.swift */; };
@@ -31,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		127ABB592ACFB5CE007E8D5E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		12D242492ACFCD940079D386 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFED71542ACB0148004ED7C7 /* dailyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFED71572ACB0148004ED7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +46,6 @@
 		EFED71602ACB014A004ED7C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFED71632ACB014A004ED7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFED71652ACB014A004ED7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFED71862ACB0765004ED7C7 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,11 +57,15 @@
 				EFED71792ACB02B1004ED7C7 /* KakaoSDKFriendCore in Frameworks */,
 				EFED71732ACB02B1004ED7C7 /* KakaoSDKCertCore in Frameworks */,
 				EFED71712ACB02B1004ED7C7 /* KakaoSDKCert in Frameworks */,
+				12D242522ACFCFE80079D386 /* FirebaseAnalyticsSwift in Frameworks */,
 				EFED718B2ACB0E1A004ED7C7 /* SnapKit in Frameworks */,
 				EFED717F2ACB02B1004ED7C7 /* KakaoSDKStory in Frameworks */,
 				EFED717B2ACB02B1004ED7C7 /* KakaoSDKNavi in Frameworks */,
+				12D242542ACFCFE80079D386 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				EFED71832ACB02B1004ED7C7 /* KakaoSDKTemplate in Frameworks */,
+				12D242502ACFCFE80079D386 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				EFED716D2ACB02B1004ED7C7 /* KakaoSDK in Frameworks */,
+				12D2424E2ACFCFE80079D386 /* FirebaseAnalytics in Frameworks */,
 				EFED71752ACB02B1004ED7C7 /* KakaoSDKCommon in Frameworks */,
 				EFED71852ACB02B1004ED7C7 /* KakaoSDKUser in Frameworks */,
 				EFED71812ACB02B1004ED7C7 /* KakaoSDKTalk in Frameworks */,
@@ -117,10 +127,11 @@
 		EFED71562ACB0148004ED7C7 /* dailyCare */ = {
 			isa = PBXGroup;
 			children = (
+				12D242492ACFCD940079D386 /* GoogleService-Info.plist */,
 				12DB4A522ACEB4EC00308BC6 /* Resources */,
 				12DB4A502ACEB30300308BC6 /* Sources */,
 				EFED71652ACB014A004ED7C7 /* Info.plist */,
-				EFED71862ACB0765004ED7C7 /* Config.xcconfig */,
+				127ABB592ACFB5CE007E8D5E /* Config.xcconfig */,
 			);
 			path = dailyCare;
 			sourceTree = "<group>";
@@ -156,6 +167,10 @@
 				EFED71822ACB02B1004ED7C7 /* KakaoSDKTemplate */,
 				EFED71842ACB02B1004ED7C7 /* KakaoSDKUser */,
 				EFED718A2ACB0E1A004ED7C7 /* SnapKit */,
+				12D2424D2ACFCFE80079D386 /* FirebaseAnalytics */,
+				12D2424F2ACFCFE80079D386 /* FirebaseAnalyticsOnDeviceConversion */,
+				12D242512ACFCFE80079D386 /* FirebaseAnalyticsSwift */,
+				12D242532ACFCFE80079D386 /* FirebaseAnalyticsWithoutAdIdSupport */,
 			);
 			productName = kakaologinUIkit;
 			productReference = EFED71542ACB0148004ED7C7 /* dailyCare.app */;
@@ -188,6 +203,7 @@
 			packageReferences = (
 				EFED716B2ACB02B1004ED7C7 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				EFED71892ACB0E1A004ED7C7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				12D2424C2ACFCFE80079D386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = EFED71552ACB0148004ED7C7 /* Products */;
 			projectDirPath = "";
@@ -204,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Resources */,
+				12D2424A2ACFCD940079D386 /* GoogleService-Info.plist in Resources */,
 				EFED71612ACB014A004ED7C7 /* Assets.xcassets in Resources */,
 				EFED715F2ACB0148004ED7C7 /* Main.storyboard in Resources */,
 			);
@@ -247,7 +264,6 @@
 /* Begin XCBuildConfiguration section */
 		EFED71662ACB014A004ED7C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFED71862ACB0765004ED7C7 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -362,13 +378,12 @@
 		};
 		EFED71692ACB014A004ED7C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFED71862ACB0765004ED7C7 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3DG6C2JMKQ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dailyCare/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -381,7 +396,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.seongwon.dk2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dailyCare.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -396,7 +411,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3DG6C2JMKQ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dailyCare/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -409,7 +424,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.seongwon.dk2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dailyCare.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -441,6 +456,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		12D2424C2ACFCFE80079D386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		EFED716B2ACB02B1004ED7C7 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
@@ -460,6 +483,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		12D2424D2ACFCFE80079D386 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12D2424C2ACFCFE80079D386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		12D2424F2ACFCFE80079D386 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12D2424C2ACFCFE80079D386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		12D242512ACFCFE80079D386 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12D2424C2ACFCFE80079D386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		12D242532ACFCFE80079D386 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12D2424C2ACFCFE80079D386 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
 		EFED716C2ACB02B1004ED7C7 /* KakaoSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EFED716B2ACB02B1004ED7C7 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;

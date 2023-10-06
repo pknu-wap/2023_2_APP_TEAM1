@@ -31,8 +31,16 @@ class ViewController: UIViewController {
     // id 입력창
     lazy var enterId : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "id"
-        // textField.borderStyle = .roundedRect
+        let placeholderText = NSAttributedString(string: "id", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        textField.attributedPlaceholder = placeholderText
+        
+        // 그림자 효과를 설정합니다.
+        textField.layer.shadowColor = UIColor.black.cgColor
+        textField.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        textField.layer.shadowRadius = 2.0
+        textField.layer.shadowOpacity = 0.5
+        
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -40,7 +48,15 @@ class ViewController: UIViewController {
     // 비번 입력창
     lazy var enterPassword : UITextField = {
         let textField = UITextField()
-        textField.placeholder = "password"
+        let placeholderText = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        textField.attributedPlaceholder = placeholderText
+        
+        // 그림자 효과를 설정합니다.
+        textField.layer.shadowColor = UIColor.black.cgColor
+        textField.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        textField.layer.shadowRadius = 2.0
+        textField.layer.shadowOpacity = 0.5
         
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
