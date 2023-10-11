@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "869869802053",
+    "project_id": "daliycare",
+    "storage_bucket": "daliycare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869869802053:android:c399c73cb7a817722d892c",
+        "android_client_info": {
+          "package_name": "com.example.dailycare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXo-3hMMoGOOREup0pEg-SLxijrMrG3Bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
