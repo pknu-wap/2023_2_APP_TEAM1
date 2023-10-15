@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background"
+    >
+
+    <!-- 상단 로고 -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/project_logo"
+        android:layout_marginTop="100dp"/>
+
+    <!-- 하단 레이아웃 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ID 입력 칸 -->
+        <EditText
+            android:id="@+id/idEditText"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textColorHint="#FFFFFF"
+            android:hint="ID"
+            />
+
+        <!-- Password 입력 칸 -->
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:textColorHint="#ffffff"
+            android:hint="password"
+            />
+
+        <!-- 로고들을 수평으로 나열 -->
+
+        <!-- 로그인 버튼 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <!-- 로고 1 -->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:src="@drawable/naver" />
+
+            <!-- 로고 2 -->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:src="@drawable/google" />
+
+            <!-- 로고 3 -->
+
+            <!-- 로고 4 -->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:src="@drawable/apple" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:src="@drawable/cacao" />
+
+        </LinearLayout>
+
+        <!-- 회원가입 버튼 -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="200dp"
+            android:layout_gravity="center"
+            android:layout_height="48dp"
+            android:layout_marginBottom="20dp"
+            android:text="Login"
+            android:background="@drawable/button_bg"
+            android:textColor="#FFFFFF"
+            style="@android:style/Widget.Button"
+            />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:text="회원가입"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            />
+    </LinearLayout>
+</LinearLayout>
+
+
