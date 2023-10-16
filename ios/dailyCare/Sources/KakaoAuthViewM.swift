@@ -9,7 +9,9 @@ import Foundation
 import Combine
 import KakaoSDKAuth
 import KakaoSDKUser
-
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
 
 class KakaoAuthM: ObservableObject {
     
@@ -77,6 +79,7 @@ class KakaoAuthM: ObservableObject {
                 isLoggedIn = await kakaoLoginWithAccount()
             }
         } // log in
+        
     }
     
     @MainActor

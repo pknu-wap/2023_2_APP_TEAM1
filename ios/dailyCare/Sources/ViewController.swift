@@ -1,13 +1,14 @@
 //
 //  ViewController.swift
-//  kakaologinUIkit
-//
-//  Created by 서성원 on 2023/10/02.
+//  Login
 //
 
 import UIKit
 import SnapKit
 import Combine
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
 
 class ViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
         return label
     }()
     
+    // MARK: - UI 선언들
     // 데일리 케어 아이콘
     lazy var mainIcon: UIImageView = {
         let imageView = UIImageView()
@@ -28,50 +30,28 @@ class ViewController: UIViewController {
         return imageView
     }()
 
-    // id 입력창
-    lazy var enterId : UITextField = {
-        let textField = UITextField()
-        let placeholderText = NSAttributedString(string: "id", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        textField.attributedPlaceholder = placeholderText
-        
-        // 그림자 효과를 설정합니다.
-        textField.layer.shadowColor = UIColor.black.cgColor
-        textField.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        textField.layer.shadowRadius = 2.0
-        textField.layer.shadowOpacity = 0.5
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-    
-    // 비번 입력창
-    lazy var enterPassword : UITextField = {
-        let textField = UITextField()
-        let placeholderText = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        textField.attributedPlaceholder = placeholderText
-        
-        // 그림자 효과를 설정합니다.
-        textField.layer.shadowColor = UIColor.black.cgColor
-        textField.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        textField.layer.shadowRadius = 2.0
-        textField.layer.shadowOpacity = 0.5
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
-
     // 카카오 로그인 버튼
     lazy var KakaoLoginButton = { (_ title: String, _ action: Selector) -> UIButton in
         let button = UIButton()
         let image = UIImage(named: "kakao.png")
-        let imageSize2 = CGSize(width: 40, height: 40)
+        let imageSize2 = CGSize(width: 200, height: 50)
         button.setImage(image?.resize(targetSize: imageSize2), for: .normal)
         button.addTarget(self, action: action, for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
+    
+    // 구글 로그인 버튼
+    lazy var GoogleLoginButton = { (_ title: String, _ action: Selector) -> UIButton in
+        let button = UIButton()
+        let image = UIImage(named: "google.png") // 구글 로그인 버튼 이미지 이름을 설정하십시오
+        let imageSize = CGSize(width: 200, height: 50) // 이미지 크기를 조정하십시오
+        button.setImage(image?.resize(targetSize: imageSize), for: .normal)
+        button.addTarget(self, action: action, for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }
+
     
     // 카카오 로그아웃 버튼
     lazy var KakaoLogoutButton = { (_ title: String, _ action: Selector) -> UIButton in
@@ -136,8 +116,9 @@ class ViewController: UIViewController {
     }()
     
     lazy var kakaoAuthVM: KakaoAuthM = { KakaoAuthM() } ()
-    
-    // 실행 부분
+    lazy var GoogleAuthVM: GoogleAuthM = { GoogleAuthM() } ()
+
+    //MARK: - 실행 부분(viewDidLoad)
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -159,13 +140,15 @@ class ViewController: UIViewController {
         // 그라데이션 레이어를 뷰의 레이어로 추가
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         
-        let kakaoLoginButton = KakaoLoginButton("카카오톡 로그인", #selector(loginButtonClicked))
+        let kakaoLoginButton = KakaoLoginButton("카카오톡 로그인", #selector(kakaoLoginButtonClicked))
+        let googleLoginButton = GoogleLoginButton("구글 로그인", #selector(googleLoginButtonClicked))
+        stackView.addArrangedSubview(googleLoginButton)
+
         let kakaoLogoutButton = KakaoLogoutButton("로그아웃", #selector(logoutButtonClicked))
         
         
         stackView.addArrangedSubview(mainIcon)
-        stackView.addArrangedSubview(enterId)
-        stackView.addArrangedSubview(enterPassword)
+        stackView.addArrangedSubview(googleLoginButton)
         stackView.addArrangedSubview(kakaoLoginButton)
         stackView.addArrangedSubview(loginButtion)
         stackView.addArrangedSubview(enterButton)
@@ -180,14 +163,21 @@ class ViewController: UIViewController {
         setBindings()
         
     } // VieDidLoad
+
     
     //MARK: - 버튼 액션 !!
-    @objc func loginButtonClicked(){ // 카카오톡 로그인 버튼 클릭 시
-        print("loginButtonClicked() called")
+    @objc func kakaoLoginButtonClicked(){ // 카카오톡 로그인 버튼 클릭 시
+        print("kakaoLoginButtonClicked() called")
         kakaoAuthVM.KakaoLogin()
     }
     
-    @objc func logoutButtonClicked(){ // 로그아웃 버튼 클릭 시
+    @objc func googleLoginButtonClicked() {
+        print("googleLoginButtonClicked() called")
+        GoogleAuthVM.GoogleSignIn(withPresenting: self) // 생성한 인스턴스를 통해 메서드 호출
+    }
+
+    // 로그아웃 버튼 클릭
+    @objc func logoutButtonClicked(){
         print("logoutButtonClicked() called")
         kakaoAuthVM.kakaoLogout()
     }

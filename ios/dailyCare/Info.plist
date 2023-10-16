@@ -7,12 +7,23 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Kakao Sign In</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>kakao$KAKAO_NATIVE_APP_KEY</string>
 			</array>
 		</dict>
-		<dict/>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Google Sign In</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.869869802053-9i6mhacl7lmmgbm03ul15r625r98aii3</string>
+			</array>
+		</dict>
 	</array>
 	<key>KAKAO_NATIVE_APP_KEY</key>
 	<string>${KAKAO_NATIVE_APP_KEY}</string>
