@@ -8,6 +8,10 @@ android {
     namespace = "com.example.dailycare"
     compileSdk = 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.dailycare"
         minSdk = 24
