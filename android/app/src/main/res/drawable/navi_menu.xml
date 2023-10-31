@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/HomeFragment"
         android:title="홈"
         android:icon="@drawable/ic_home"/>
 
@@ -17,8 +17,8 @@
         android:icon="@drawable/ic_timer"/>
 
     <item
-        android:id="@+id/myPageFragment"
-        android:title="마이페이지"
-        android:icon="@drawable/ic_emoticon"/>
+        android:id="@+id/MyPageFragment"
+        android:title="마이"
+        android:icon="@drawable/ic_mypage"/>
 
 </menu>
