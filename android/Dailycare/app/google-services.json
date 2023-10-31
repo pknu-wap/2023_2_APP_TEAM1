@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "272626717337",
+    "project_id": "dailycare-e427c",
+    "storage_bucket": "dailycare-e427c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272626717337:android:66281e0ef9282400db9e08",
+        "android_client_info": {
+          "package_name": "com.example.dailycare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272626717337-q1aao33gjbetdlisri9kokvs225fbcbr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dailycare",
+            "certificate_hash": "934de441b3b6ea0cdf03e03ec61eaf696a71a375"
+          }
+        },
+        {
+          "client_id": "272626717337-bfkgcg1a5bjtckj4ldka1u39rmpdp9hi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAkabbUxfIOsq5QU6nSDClMr1v0ITgwTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272626717337-bfkgcg1a5bjtckj4ldka1u39rmpdp9hi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
