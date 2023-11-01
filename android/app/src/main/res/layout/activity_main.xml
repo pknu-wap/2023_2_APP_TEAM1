@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -35,3 +36,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

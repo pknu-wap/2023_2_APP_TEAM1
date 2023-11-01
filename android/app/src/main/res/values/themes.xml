@@ -1,9 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Dailycare" parent="Theme.AppCompat.DayNight.NoActionBar">
+
+    <style name="Base.Theme.DailyCare" parent="Theme.Material3.DayNight.NoActionBar">
+
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Dailycare" parent="Base.Theme.Dailycare" />
+
+    <style name="Theme.DailyCare" parent="Base.Theme.DailyCare" />
+
 </resources>
