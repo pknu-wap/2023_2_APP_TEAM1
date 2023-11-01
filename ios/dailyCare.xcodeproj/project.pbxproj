@@ -40,12 +40,13 @@
 		12C32D082ADABB0300E68149 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 12C32D072ADABB0300E68149 /* FirebaseDynamicLinks */; };
 		12C32D0A2ADABB0300E68149 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 12C32D092ADABB0300E68149 /* FirebaseFirestore */; };
 		12C32D0C2ADABB0300E68149 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 12C32D0B2ADABB0300E68149 /* FirebaseFirestoreCombine-Community */; };
-		12C80E782ADAB4EC007D6CEE /* GoogleAuthViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C80E772ADAB4EC007D6CEE /* GoogleAuthViewM.swift */; };
+		12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */; };
+		12DE5B9E2AEF937E0080E1FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */; };
 		12E7BECD2ADAB8510003F123 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 12E7BECC2ADAB8510003F123 /* GoogleSignIn */; };
 		12E7BECF2ADAB8510003F123 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12E7BECE2ADAB8510003F123 /* GoogleSignInSwift */; };
 		EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71572ACB0148004ED7C7 /* AppDelegate.swift */; };
 		EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */; };
-		EFED715C2ACB0148004ED7C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED715B2ACB0148004ED7C7 /* ViewController.swift */; };
+		EFED715C2ACB0148004ED7C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED715B2ACB0148004ED7C7 /* LoginViewController.swift */; };
 		EFED715F2ACB0148004ED7C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFED715D2ACB0148004ED7C7 /* Main.storyboard */; };
 		EFED71612ACB014A004ED7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFED71602ACB014A004ED7C7 /* Assets.xcassets */; };
 		EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFED71622ACB014A004ED7C7 /* LaunchScreen.storyboard */; };
@@ -62,23 +63,24 @@
 		EFED71812ACB02B1004ED7C7 /* KakaoSDKTalk in Frameworks */ = {isa = PBXBuildFile; productRef = EFED71802ACB02B1004ED7C7 /* KakaoSDKTalk */; };
 		EFED71832ACB02B1004ED7C7 /* KakaoSDKTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = EFED71822ACB02B1004ED7C7 /* KakaoSDKTemplate */; };
 		EFED71852ACB02B1004ED7C7 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = EFED71842ACB02B1004ED7C7 /* KakaoSDKUser */; };
-		EFED71882ACB0C78004ED7C7 /* KakaoAuthViewM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */; };
+		EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71872ACB0C78004ED7C7 /* KakaoAuthM.swift */; };
 		EFED718B2ACB0E1A004ED7C7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EFED718A2ACB0E1A004ED7C7 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		127ABB592ACFB5CE007E8D5E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		12C80E772ADAB4EC007D6CEE /* GoogleAuthViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthViewM.swift; sourceTree = "<group>"; };
+		12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthM.swift; sourceTree = "<group>"; };
+		12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EFED71542ACB0148004ED7C7 /* dailyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFED71572ACB0148004ED7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EFED715B2ACB0148004ED7C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFED715B2ACB0148004ED7C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EFED715E2ACB0148004ED7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFED71602ACB014A004ED7C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFED71632ACB014A004ED7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFED71652ACB014A004ED7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewM.swift; sourceTree = "<group>"; };
+		EFED71872ACB0C78004ED7C7 /* KakaoAuthM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +145,10 @@
 		12DB4A502ACEB30300308BC6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				EFED71872ACB0C78004ED7C7 /* KakaoAuthViewM.swift */,
-				EFED715B2ACB0148004ED7C7 /* ViewController.swift */,
-				12C80E772ADAB4EC007D6CEE /* GoogleAuthViewM.swift */,
+				EFED71872ACB0C78004ED7C7 /* KakaoAuthM.swift */,
+				EFED715B2ACB0148004ED7C7 /* LoginViewController.swift */,
+				12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */,
+				12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -327,9 +330,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFED71882ACB0C78004ED7C7 /* KakaoAuthViewM.swift in Sources */,
-				12C80E782ADAB4EC007D6CEE /* GoogleAuthViewM.swift in Sources */,
-				EFED715C2ACB0148004ED7C7 /* ViewController.swift in Sources */,
+				EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */,
+				12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */,
+				EFED715C2ACB0148004ED7C7 /* LoginViewController.swift in Sources */,
+				12DE5B9E2AEF937E0080E1FC /* MainViewController.swift in Sources */,
 				EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */,
 				EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */,
 			);
@@ -477,6 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = dailyCare/dailyCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -506,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = dailyCare/dailyCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";

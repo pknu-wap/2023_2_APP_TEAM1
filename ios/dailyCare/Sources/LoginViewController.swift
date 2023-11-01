@@ -10,7 +10,7 @@ import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     var subscriptions = Set<AnyCancellable>()
     
@@ -168,12 +168,30 @@ class ViewController: UIViewController {
     //MARK: - 버튼 액션 !!
     @objc func kakaoLoginButtonClicked(){ // 카카오톡 로그인 버튼 클릭 시
         print("kakaoLoginButtonClicked() called")
-        kakaoAuthVM.KakaoLogin()
+        Task {
+            if await kakaoAuthVM.kakaoLoginWithAccount() {
+                // 로그인 성공한 경우 MainViewController로 화면 전환
+                let mainViewController = MainViewController()
+                mainViewController.setEmail(kakaoAuthVM.userEmail ?? "N/A")
+                self.navigationController?.pushViewController(mainViewController, animated: true)
+            }
+        }
     }
     
-    @objc func googleLoginButtonClicked() {
+    @objc func googleLoginButtonClicked() async {
         print("googleLoginButtonClicked() called")
+        /*
+        Task {
+            if GoogleAuthVM.GoogleSignIn(withPresenting: self) {
+                // 로그인 성공한 경우 MainViewController로 화면 전환
+                let mainViewController = MainViewController()
+                mainViewController.setEmail(GoogleAuthVM.userEmail ?? "N/A")
+                self.navigationController?.pushViewController(mainViewController, animated: true)
+            }
+        }
+         */
         GoogleAuthVM.GoogleSignIn(withPresenting: self) // 생성한 인스턴스를 통해 메서드 호출
+        
     }
 
     // 로그아웃 버튼 클릭
@@ -183,6 +201,9 @@ class ViewController: UIViewController {
     }
     
     @objc func loginButtonTapped() {
+        let mainViewController = MainViewController()
+        self.navigationController?.pushViewController(mainViewController, animated: true)
+        
         print("로그인 시도")
     }
     
@@ -192,7 +213,7 @@ class ViewController: UIViewController {
 } // viewcontroller
 
 //MARK: - 뷰모델 바인딩
-extension ViewController {
+extension LoginViewController {
     fileprivate func setBindings() {
         self.kakaoAuthVM.loginStatusInfo
             .receive(on: DispatchQueue.main)
@@ -235,7 +256,7 @@ struct ViewControllerPresentable: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: Context) -> some UIViewController {
-        ViewController()
+        LoginViewController()
     }
 }
 
