@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/HomeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="홈"/>
+
+    <item
+        android:id="@+id/MedicineInfoFragment"
+        android:icon="@drawable/ic_medicine"
+        android:title="약정보"/>
+
+    <item
+        android:id="@+id/MyPageFragment"
+        android:icon="@drawable/ic_mypage"
+        android:title="마이페이지"/>
+
+    <item
+        android:id="@+id/TimerFragment"
+        android:icon="@drawable/ic_timer"
+        android:title="타이머"/>
+
+</menu>
