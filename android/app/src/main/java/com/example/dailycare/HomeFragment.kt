@@ -14,6 +14,7 @@ import com.example.dailycare.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     lateinit var diseaseData : MutableList<String>
+    lateinit var user : String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +31,7 @@ class HomeFragment : Fragment() {
         setFragmentResultListener("request") {
             key, bundle->
             bundle.getString("valueKey")?.let {
-                binding.textView.setText(it)
+                binding.textView.setText("${user}님")
             }
         }
 
