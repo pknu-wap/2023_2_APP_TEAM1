@@ -12,7 +12,28 @@
           "package_name": "com.example.dailycare"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "869869802053-smnulp04m1b3braiehv5lgr23dl60ket.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dailycare",
+            "certificate_hash": "c28e5170febb7aa4245ccb34163a66602de0879d"
+          }
+        },
+        {
+          "client_id": "869869802053-v7j86gu1sv9oo3renpjt1he105njdl3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dailycare",
+            "certificate_hash": "a7893421ff3c89b12bdae9c501b9064f0d8cb965"
+          }
+        },
+        {
+          "client_id": "869869802053-u8lbh93tgllepucocqhd67949u3b82vv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAXo-3hMMoGOOREup0pEg-SLxijrMrG3Bk"
@@ -20,7 +41,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869869802053-u8lbh93tgllepucocqhd67949u3b82vv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "869869802053-9i6mhacl7lmmgbm03ul15r625r98aii3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dailyCare.app"
+              }
+            }
+          ]
         }
       }
     }

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
 import androidx.fragment.app.setFragmentResultListener
 import com.example.dailycare.databinding.ActivityNaviBinding
 import com.example.dailycare.databinding.FragmentHomeBinding
@@ -35,6 +36,7 @@ class HomeFragment : Fragment() {
             }
         }
 
+
         setSpinner()
     }
 
@@ -46,13 +48,19 @@ class HomeFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-
+                // 선택하면 그에 맞는 현재 상황을 보여주기
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
         }
+    }
+
+    class Notification {
+        private lateinit var date: String
+        private lateinit var titleContext: String
+
+
     }
 
     fun initDiseaseData() {
