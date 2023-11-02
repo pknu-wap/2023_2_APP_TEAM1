@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
         setFragmentResultListener("request") {
             key, bundle->
             bundle.getString("valueKey")?.let {
-                binding.textView.setText("${user}님")
+                binding.usernameTextView.setText("${user}님")
             }
         }
 
@@ -46,7 +46,7 @@ class HomeFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                binding.textView.text = diseaseData.get(position)
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
