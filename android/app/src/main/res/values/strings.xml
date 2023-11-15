@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">DailyCare</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id" translatable="false">869869802053-u8lbh93tgllepucocqhd67949u3b82vv.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">869869802053</string>
+    <string name="google_api_key" translatable="false">AIzaSyAXo-3hMMoGOOREup0pEg-SLxijrMrG3Bk</string>
+    <string name="google_app_id" translatable="false">1:869869802053:android:c399c73cb7a817722d892c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAXo-3hMMoGOOREup0pEg-SLxijrMrG3Bk</string>
+    <string name="google_storage_bucket" translatable="false">daliycare.appspot.com</string>
 </resources>

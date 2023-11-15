@@ -14,8 +14,8 @@ import com.example.dailycare.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
-    lateinit var diseaseData : MutableList<String>
-    lateinit var user : String
+    var diseaseData = mutableListOf<String>()
+    var user = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -71,6 +71,6 @@ class HomeFragment : Fragment() {
         diseaseData.add(disease)
     }
 
-    fun getDiseaseData() = diseaseData
+    // fun getDiseaseData() = diseaseData
 
 }

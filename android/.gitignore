@@ -1,5 +1,5 @@
 *.iml
-.gradle
+.gradle/
 /local.properties
 /.idea/caches
 /.idea/libraries
@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+google-services.json
+
+.idea
+**/node_modules/*
+**/.firebaserc
