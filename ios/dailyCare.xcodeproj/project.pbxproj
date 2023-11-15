@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE12B01DA3500EEDF28 /* TestViewController.swift */; };
+		1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE42B03B1AE00EEDF28 /* MyCell.swift */; };
+		1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */; };
 		1299D4EC2ADD5A5B00BB675F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */; };
 		12C071632AD15759008474AB /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071622AD15759008474AB /* KakaoSDK */; };
 		12C071652AD15759008474AB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071642AD15759008474AB /* KakaoSDKAuth */; };
@@ -69,6 +72,9 @@
 
 /* Begin PBXFileReference section */
 		127ABB592ACFB5CE007E8D5E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		1284FBE12B01DA3500EEDF28 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		1284FBE42B03B1AE00EEDF28 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
 		1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthM.swift; sourceTree = "<group>"; };
 		12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +155,9 @@
 				EFED715B2ACB0148004ED7C7 /* LoginViewController.swift */,
 				12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */,
 				12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */,
+				1284FBE12B01DA3500EEDF28 /* TestViewController.swift */,
+				1284FBE42B03B1AE00EEDF28 /* MyCell.swift */,
+				1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -166,6 +175,9 @@
 		12DB4A522ACEB4EC00308BC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EFED71652ACB014A004ED7C7 /* Info.plist */,
+				127ABB592ACFB5CE007E8D5E /* Config.xcconfig */,
+				1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */,
 				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
 				EFED71602ACB014A004ED7C7 /* Assets.xcassets */,
 				12DB4A512ACEB43D00308BC6 /* Storyboards */,
@@ -193,11 +205,8 @@
 		EFED71562ACB0148004ED7C7 /* dailyCare */ = {
 			isa = PBXGroup;
 			children = (
-				1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */,
-				127ABB592ACFB5CE007E8D5E /* Config.xcconfig */,
 				12DB4A522ACEB4EC00308BC6 /* Resources */,
 				12DB4A502ACEB30300308BC6 /* Sources */,
-				EFED71652ACB014A004ED7C7 /* Info.plist */,
 			);
 			path = dailyCare;
 			sourceTree = "<group>";
@@ -330,10 +339,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */,
+				1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */,
 				EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */,
 				12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */,
 				EFED715C2ACB0148004ED7C7 /* LoginViewController.swift in Sources */,
 				12DE5B9E2AEF937E0080E1FC /* MainViewController.swift in Sources */,
+				1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */,
 				EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */,
 				EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */,
 			);
@@ -486,7 +498,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dailyCare/info.plist;
+				INFOPLIST_FILE = dailyCare/Resources/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -516,7 +528,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = dailyCare/info.plist;
+				INFOPLIST_FILE = dailyCare/Resources/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

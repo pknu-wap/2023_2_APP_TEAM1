@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         imageView.image = image
         return imageView
     }()
-
+    
     // 카카오 로그인 버튼
     lazy var KakaoLoginButton = { (_ title: String, _ action: Selector) -> UIButton in
         let button = UIButton()
@@ -51,59 +51,7 @@ class LoginViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
-
     
-    // 카카오 로그아웃 버튼
-    lazy var KakaoLogoutButton = { (_ title: String, _ action: Selector) -> UIButton in
-        let button = UIButton()
-        let image = UIImage(named: "logout.png")
-        let imageSize = CGSize(width: 50, height: 50)
-        button.setImage(image?.resize(targetSize: imageSize), for: .normal)
-        button.addTarget(self, action: action, for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }
-    
-    // 일반 로그인 버튼
-    lazy var loginButtion = {
-        let button = UIButton()
-        let image = UIImage(named: "login.png")
-        let imageSize2 = CGSize(width: 200, height: 200)
-        button.setImage(image?.resize(targetSize: imageSize2), for: .normal)
-        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        // Auto Layout 설정
-        button.translatesAutoresizingMaskIntoConstraints = false
-            
-        return button
-    }()
-    
-    // 회원가입 버튼
-    lazy var enterButton: UIButton = {
-        let button = UIButton()
-        
-        // 버튼 텍스트 설정
-        let buttonText = "회원가입"
-        let attributedText = NSMutableAttributedString(string: buttonText)
-        let range = NSRange(location: 0, length: buttonText.count)
-        
-        // 텍스트에 밑줄 추가
-        attributedText.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: range)
-        
-        // 텍스트 색상 및 폰트 설정
-        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: range)
-        attributedText.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 16), range: range)
-        
-        // 속성이 적용된 텍스트를 버튼에 설정
-        button.setAttributedTitle(attributedText, for: .normal)
-        
-        // 버튼 액션 설정 (아래의 #selector 내용은 적절한 액션으로 변경하세요)
-        button.addTarget(self, action: #selector(enterButtonTapped), for: .touchUpInside)
-        
-        // Auto Layout 설정
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        return button
-    }()
     // 스택뷰 설정
     lazy var stackView : UIStackView = {
         let stack = UIStackView()
@@ -142,17 +90,10 @@ class LoginViewController: UIViewController {
         
         let kakaoLoginButton = KakaoLoginButton("카카오톡 로그인", #selector(kakaoLoginButtonClicked))
         let googleLoginButton = GoogleLoginButton("구글 로그인", #selector(googleLoginButtonClicked))
-        stackView.addArrangedSubview(googleLoginButton)
-
-        let kakaoLogoutButton = KakaoLogoutButton("로그아웃", #selector(logoutButtonClicked))
-        
         
         stackView.addArrangedSubview(mainIcon)
         stackView.addArrangedSubview(googleLoginButton)
         stackView.addArrangedSubview(kakaoLoginButton)
-        stackView.addArrangedSubview(loginButtion)
-        stackView.addArrangedSubview(enterButton)
-        stackView.addArrangedSubview(kakaoLogoutButton)
         
         self.view.addSubview(stackView)
         
@@ -173,6 +114,11 @@ class LoginViewController: UIViewController {
                 // 로그인 성공한 경우 MainViewController로 화면 전환
                 let mainViewController = MainViewController()
                 mainViewController.setEmail(kakaoAuthVM.userEmail ?? "N/A")
+                mainViewController.setNickname(kakaoAuthVM.userNickname ?? "N/A")
+                print("hello : \(kakaoAuthVM.userNickname)")
+                // 숨기기 위해 뒤로가기 버튼을 nil로 설정
+                self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
                 self.navigationController?.pushViewController(mainViewController, animated: true)
             }
         }

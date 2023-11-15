@@ -1,127 +1,287 @@
 //
-//  Mypage.swift
-//  dailyCare
+//  ViewController.swift
+//  CarouselView
 //
-//  Created by 서성원 on 2023/10/09.
+//  Created by 김종권 on 2021/07/19.
 //
 
-import Foundation
 import UIKit
-import SnapKit
-import Combine
 
-
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
-    
-    lazy var emailLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    lazy var main: UIImageView = {
-        let imageView = UIImageView()
-        let image = UIImage(named: "main.png") // 이미지 이름을 설정하십시오
-        imageView.image = image
-        return imageView
-    }()
 
-    lazy var stackView : UIStackView = {
-        let stack = UIStackView()
-        stack.spacing = 30
-        stack.axis = .vertical
-        stack.alignment = .fill
-        stack.distribution = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
+    // 질병 선택 창
+    lazy var illSelector: UIPickerView = {
         
-        return stack
+            let picker = UIPickerView()
+        
+            picker.frame = CGRect(x: 270, y: 270, width: 80.0, height: 50.0)
+            picker.backgroundColor = .white
+            picker.delegate = self
+            picker.dataSource = self
+            return picker
+    }()
+
+    private let values: [String] = ["당뇨","감기","비염"]
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return values.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return values[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("row: \(row)")
+        print("value: \(values[row])")
+    }
+            
+    func MainViewController() { // 메인 이미지
+        let testImageView = UIImageView()
+        if let image = UIImage(named: "main.png") {
+            testImageView.image = image
+            testImageView.contentMode = .scaleAspectFill
+            testImageView.clipsToBounds = true
+            testImageView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(testImageView)
+            
+            // 아래의 safeArea 제약을 비활성화하고, 뷰의 가장 위쪽에 이미지 뷰를 배치
+            let topConstraint = testImageView.topAnchor.constraint(equalTo: view.topAnchor)
+            let leadingConstraint = testImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+            let trailingConstraint = testImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            let heightConstraint = testImageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3) // 이미지 크기를 높이의 25%로 설정
+            
+            topConstraint.isActive = true
+            leadingConstraint.isActive = true
+            trailingConstraint.isActive = true
+            heightConstraint.isActive = true
+        } else {
+            print("Image not found")
+        }
+    }
+    
+    func userName(_ email: String) { // 사용자 이름
+        
+            let userLabel = UILabel()
+            userLabel.text = "\(email)"
+            userLabel.translatesAutoresizingMaskIntoConstraints = false
+            userLabel.font = .italicSystemFont(ofSize: 20)
+            userLabel.textColor = .black
+            userLabel.textAlignment = .center
+            
+            view.addSubview(userLabel)
+            
+            let safeArea = view.safeAreaLayoutGuide
+            let leadingConstraint = userLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 60)
+            let topConstraint = userLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 220)
+
+            leadingConstraint.isActive = true
+            topConstraint.isActive = true
+            
+            userLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        }
+    func caution() { // 주의사항
+            let testLabel = UILabel()
+            testLabel.text = "주의사항"
+            testLabel.translatesAutoresizingMaskIntoConstraints = false
+            testLabel.font = .italicSystemFont(ofSize: 20)
+            testLabel.textColor = .black
+            testLabel.textAlignment = .center
+            
+            view.addSubview(testLabel)
+            
+            let safeArea = view.safeAreaLayoutGuide
+            let leadingConstraint = testLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 60)
+            let topConstraint = testLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 260)
+
+            leadingConstraint.isActive = true
+            topConstraint.isActive = true
+            
+            testLabel.translatesAutoresizingMaskIntoConstraints = false
+        }
+    
+    func checkList() {
+            let testLabel = UILabel()
+            testLabel.text = "체크리스트"
+            testLabel.translatesAutoresizingMaskIntoConstraints = false
+            testLabel.font = .italicSystemFont(ofSize: 20)
+            testLabel.textColor = .black
+            testLabel.textAlignment = .center
+            
+            view.addSubview(testLabel)
+            
+            let safeArea = view.safeAreaLayoutGuide
+            let leadingConstraint = testLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 60)
+            let topConstraint = testLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 460)
+
+            leadingConstraint.isActive = true
+            topConstraint.isActive = true
+            
+            testLabel.translatesAutoresizingMaskIntoConstraints = false
+        }
+
+    var dataSource: [String] = []
+
+    lazy var cautionView: UICollectionView = { // 컬렉션 뷰 1
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 30 // cell사이의 간격 설정
+        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        
+        return view
     }()
     
-    lazy var scrollView: UIScrollView = {
-            let scrollView = UIScrollView()
-            scrollView.isPagingEnabled = true
-            return scrollView
-        }()
-
+    lazy var checkListView: UICollectionView = { // 컬렉션 뷰2
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 30 // cell사이의 간격 설정
+        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        
+        return view
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let userEmail = kakaoAuthManager?.userEmail {
-             setEmail(userEmail)
+        // 네비게이션 바 숨기기
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        view.backgroundColor = .white
+        
+//        if let userEmail = kakaoAuthManager?.userEmail {
+//            userName(userEmail)
+//         }
+        if let userNicname = kakaoAuthManager?.userNickname {
+            userName(userNicname)
          }
-        
-        // 그라데이션 색상 설정
-        let startColor = UIColor(red: 0.63, green: 0.91, blue: 0.56, alpha: 1.0).cgColor
-        
-        let endColor = UIColor(red: 0.63, green: 0.86, blue: 0.8, alpha: 1.0).cgColor
-        
-        // 그라데이션 레이어 생성
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        
-        // 그라데이션 색상 배열 설정
-        gradientLayer.colors = [startColor, endColor]
-        // 그라데이션 시작점 및 종료점 설정
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0) // 중간상단
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0) // 중간하단
 
-        // 그라데이션 레이어를 뷰의 레이어로 추가
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-        // "Hello, World!" 레이블 추가
-        let helloLabel = UILabel()
-        helloLabel.text = "Hello, World!"
-        helloLabel.textColor = UIColor.white // 텍스트 색상 설정
-        helloLabel.font = UIFont.systemFont(ofSize: 24) // 텍스트 폰트 및 크기 설정
-        helloLabel.textAlignment = .center // 텍스트 정렬 설정
-        helloLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        // 스택뷰에 "Hello, World!" 레이블 추가
-        stackView.addArrangedSubview(helloLabel)
+        MainViewController()
+        caution()
+        checkList()
 
-        stackView.addArrangedSubview(main)
-        stackView.addArrangedSubview(scrollView)
-        stackView.addArrangedSubview(emailLabel)
+        setupDataSource()
+        addSubviews()
+        setupDelegate()
+        registerCell()
+        cautionWindowSize()
         
-        self.view.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.center.equalTo(self.view)
-            
-        }
-            }
-    
-    @objc func Tapped() {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        cautionView.translatesAutoresizingMaskIntoConstraints = false
+        checkListView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(self.illSelector)
+        
     }
+    
     func setEmail(_ email: String) {
         print("main email : ",email)
-        emailLabel.text = "이메일: \(email)"
+    }
+    func setNickname(_ Nickname: String) {
+        print("main Nickname : ",Nickname)
+        userName(Nickname)
     }
     
+    private func setupDataSource() {
+        for i in 1...5 {
+            dataSource += ["\(i)"]
+        }
+    }
+
+    private func addSubviews() {
+            // 컨테이너 뷰 생성
+            let container = UIView()
+            container.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(container)
+            
+            // 컨테이너 뷰에 컬렉션 뷰들을 추가
+            container.addSubview(cautionView)
+            container.addSubview(checkListView)
+            
+            // 컨테이너 뷰 내에서 각 컬렉션 뷰의 배치 및 크기 설정
+            container.snp.makeConstraints { make in
+                make.center.equalToSuperview() // 화면 중앙 정렬
+                make.leading.equalToSuperview().offset(20) // 왼쪽 여백 20 포인트
+                make.trailing.equalToSuperview().offset(-20) // 오른쪽 여백 20 포인트
+            
+                make.height.equalTo(520) // 두 개의 컬렉션 뷰와 간격의 합
+            }
+        
+            let separatorView = UIView() // 컨테이너 사이 구분선 설정
+                separatorView.backgroundColor = .lightGray
+                separatorView.translatesAutoresizingMaskIntoConstraints = false
+                container.addSubview(separatorView)
+                
+                separatorView.snp.makeConstraints { make in
+                    make.top.equalTo(cautionView.snp.bottom).offset(5) // 컬렉션 뷰 간의 간격을 설정
+                    make.leading.equalToSuperview().offset(30) // 왼쪽 여백 30 포인트 (원하는 여백 설정)
+                    make.trailing.equalToSuperview().offset(-30) // 오른쪽 여백 30 포인트 (원하는 여백 설정)
+                    make.height.equalTo(1) // 구분선의 높이
+                }
+                
+                checkListView.snp.makeConstraints { make in
+                    make.top.equalTo(cautionView.snp.bottom).offset(50) // 컬렉션 뷰 간의 간격을 설정
+                    make.leading.equalToSuperview().offset(30) // 왼쪽 여백 20 포인트
+                    make.trailing.equalToSuperview().offset(-30) // 오른쪽 여백 20 포인트
+                    make.height.equalTo(150)
+                }
+        }
+
+    private func setupDelegate() {
+        cautionView.delegate = self
+        cautionView.dataSource = self
+        checkListView.delegate = self
+        checkListView.dataSource = self
+    }
+
+    private func registerCell() {
+        cautionView.register(MyCell.self, forCellWithReuseIdentifier: MyCell.id)
+        checkListView.register(MyCell.self, forCellWithReuseIdentifier: MyCell.id)
+    }
+
+    private func cautionWindowSize() { // 주의사항 윈도우 크기 설정
+        cautionView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.leading.equalToSuperview().offset(30) // 왼쪽 여백 20 포인트
+            make.trailing.equalToSuperview().offset(-30) // 오른쪽 여백 20 포인트
+            make.height.equalTo(150)
+        }
+    }
 }
 
-#if DEBUG
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
-import SwiftUI
-
-struct ViewControllerPresentable2: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSource.count
     }
-    
-    func makeUIViewController(context: Context) -> some UIViewController {
-        MainViewController()
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCell.id, for: indexPath)
+        if let cell = cell as? MyCell {
+            cell.model = dataSource[indexPath.item]
+        }
+
+        return cell
+    }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = collectionView.frame.width - 60 // 여백을 뺀 너비 (양쪽에 각각 20 포인트의 여백)
+        let cellHeight = collectionView.frame.height - 30
+        return CGSize(width: cellWidth, height: cellHeight)
     }
 }
 
-struct ViewControllerPrePresentable_PreviewProvider2 : PreviewProvider {
-    static var previews: some View {
-        ViewControllerPresentable()
-    }
-}
-#endif
+
 

@@ -18,6 +18,7 @@ class KakaoAuthM: ObservableObject {
 
     @Published var isLoggedIn : Bool = false
     @Published var userEmail: String? = nil
+    @Published var userNickname: String? = nil
     
     lazy var loginStatusInfo : AnyPublisher<String?, Never> =
     $isLoggedIn.compactMap{ $0 ? "로그인 상태" : "로그아웃 상태"}.eraseToAnyPublisher()
@@ -44,25 +45,29 @@ class KakaoAuthM: ObservableObject {
                             print("------KAKAO : user loading failed------")
                             print(error)
                         } else {
-                            if let email = kuser?.kakaoAccount?.email {
+                            if let email = kuser?.kakaoAccount?.email,
+                               let nickname = kuser?.kakaoAccount?.profile?.nickname {
                                 DispatchQueue.main.async {
-                                    self.userEmail = email // userEmail 업데이트
+                                    self.userEmail = email
+                                    self.userNickname = nickname
                                 }
+
                                 Auth.auth().createUser(withEmail: email, password: "\(String(describing: kuser?.id))") { fuser, error in
                                     if let error = error {
-                                        print("FB : signup failed")
+                                        print("FB: signup failed")
                                         print(error)
                                         Auth.auth().signIn(withEmail: email, password: "\(String(describing: kuser?.id))", completion: nil)
                                     } else {
-                                        print("FB : signup success")
+                                        print("FB: signup success")
+                                        // Now you can use self.userNickname as the user's nickname
+                                        print("User Nickname: \(self.userNickname)")
                                     }
                                 }
-
-
                             } else {
-                                // email이 nil일 경우에 대한 처리
-                                print("Kakao user email is nil.")
+                                // Handle the case where either email or nickname is nil
+                                print("Kakao user email or nickname is nil.")
                             }
+
                         }
                     }
                     continuation.resume(returning: true)
@@ -91,23 +96,27 @@ class KakaoAuthM: ObservableObject {
                             print("------KAKAO : user loading failed------")
                             print(error)
                         } else {
-                            if let email = kuser?.kakaoAccount?.email {
+                            if let email = kuser?.kakaoAccount?.email,
+                               let nickname = kuser?.kakaoAccount?.profile?.nickname {
                                 DispatchQueue.main.async {
-                                    self.userEmail = email // userEmail 업데이트
-                                    print("User email is: \(self.userEmail ?? "N/A")")
+                                    self.userEmail = email
+                                    self.userNickname = nickname
                                 }
+
                                 Auth.auth().createUser(withEmail: email, password: "\(String(describing: kuser?.id))") { fuser, error in
                                     if let error = error {
-                                        print("FB : signup failed")
+                                        print("FB: signup failed")
                                         print(error)
                                         Auth.auth().signIn(withEmail: email, password: "\(String(describing: kuser?.id))", completion: nil)
                                     } else {
-                                        print("FB : signup success")
+                                        print("FB: signup success")
+                                        // Now you can use self.userNickname as the user's nickname
+                                        print("User Nickname: \(self.userNickname)")
                                     }
                                 }
                             } else {
-                                // email이 nil일 경우에 대한 처리
-                                print("Kakao user email is nil.")
+                                // Handle the case where either email or nickname is nil
+                                print("Kakao user email or nickname is nil.")
                             }
                         }
                         continuation.resume(returning: true)
