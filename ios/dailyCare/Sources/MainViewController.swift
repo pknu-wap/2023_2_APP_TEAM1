@@ -122,7 +122,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             
             let safeArea = view.safeAreaLayoutGuide
             let leadingConstraint = testLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 60)
-            let topConstraint = testLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 460)
+            let topConstraint = testLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 430)
 
             leadingConstraint.isActive = true
             topConstraint.isActive = true
@@ -156,6 +156,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         // 네비게이션 바 숨기기
         navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationItem.hidesBackButton = true
         
         view.backgroundColor = .white
         
@@ -282,6 +283,5 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: cellWidth, height: cellHeight)
     }
 }
-
 
 
