@@ -20,8 +20,9 @@
         android:layout_width="0dp"
         android:layout_height="125dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/space">
+        app:layout_constraintTop_toBottomOf="@+id/myPageTitleTextView">
 
         <ImageView
             android:id="@+id/imageView"
@@ -81,19 +82,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/fixInfoTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:text="회원 정보 수정"
-            android:textAlignment="textStart"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/bugFixRequestTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView6"
-            app:layout_constraintTop_toBottomOf="@+id/watchMyRecordTextView" />
-
-        <TextView
             android:id="@+id/bugFixRequestTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -115,20 +103,12 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:src="@drawable/ic_debugRequest"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_debug"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:src="@drawable/ic_fixUserInfo"
-            app:layout_constraintBottom_toTopOf="@+id/imageView5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -136,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="25dp"
-        android:text="<"
+        android:text="prev"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/space"
