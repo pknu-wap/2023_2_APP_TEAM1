@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
     }
 
     fun setSpinner() {
+        initDiseaseData()
         binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
