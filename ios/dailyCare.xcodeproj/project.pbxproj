@@ -175,12 +175,12 @@
 		12DB4A522ACEB4EC00308BC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				12DB4A512ACEB43D00308BC6 /* Storyboards */,
 				EFED71652ACB014A004ED7C7 /* Info.plist */,
 				127ABB592ACFB5CE007E8D5E /* Config.xcconfig */,
 				1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */,
 				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
 				EFED71602ACB014A004ED7C7 /* Assets.xcassets */,
-				12DB4A512ACEB43D00308BC6 /* Storyboards */,
 				EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */,
 			);
 			path = Resources;

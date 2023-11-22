@@ -19,15 +19,19 @@ class ApiParser : UIViewController, XMLParserDelegate{
     var pillItems = [[String : String]]() // 영화 item Dictional Array
     var pillItem = [String: String]()     // 영화 item Dictionary
     var entpName = ""
-    var itemName = ""
+    var itemName = "활명수"
     var itemSeq = ""
     var efcyQesitm = ""
     var useMethodQesitm = ""
     
+    private let PILL_API_KEY = Bundle.main.object(forInfoDictionaryKey: "PILL_API_KEY") as? String
+    
     func requestApiInfo() {
+        
+        guard let PILL_API_KEY = PILL_API_KEY else { return }
         // OPEN API 주소
         // 1. URL 만들기
-        guard let url = URL(string: "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=74%2FESKjKOaJf2JxK4pB3NtVMoiq04t2CSj26wZESSyoBx6jWeMAPEA2c5i2X1KhmBiT5S4LYUup9LrxmPctqbg%3D%3D&trustEntpName=%ED%95%9C%EB%AF%B8%EC%95%BD%ED%92%88(%EC%A3%BC)&pageNo=1&startPage=1&numOfRows=1") else { return }
+        guard let url = URL(string: "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=\(PILL_API_KEY)&trustEntpName=%ED%95%9C%EB%AF%B8%EC%95%BD%ED%92%88(%EC%A3%BC)&pageNo=1&startPage=1&numOfRows=1") else { return }
 
         // 2. URLSession을 사용하여 데이터 로드
         URLSession.shared.dataTask(with: url) { (data, response, error) in

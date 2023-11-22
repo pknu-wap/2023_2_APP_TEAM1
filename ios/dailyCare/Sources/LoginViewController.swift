@@ -112,9 +112,8 @@ class LoginViewController: UIViewController {
         Task {
             if await kakaoAuthVM.kakaoLoginWithAccount() {
                 // 로그인 성공한 경우 MainViewController로 화면 전환
-                let mainViewController = MainViewController()
+                let mainViewController = TestViewController()
                 mainViewController.setEmail(kakaoAuthVM.userEmail ?? "N/A")
-                mainViewController.setNickname(kakaoAuthVM.userNickname ?? "N/A")
                 print("hello : \(kakaoAuthVM.userNickname)")
                 // 숨기기 위해 뒤로가기 버튼을 nil로 설정
                 self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

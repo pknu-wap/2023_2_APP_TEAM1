@@ -2,8 +2,6 @@
 //  Mypage.swift
 //  dailyCare
 //
-//  Created by 서성원 on 2023/10/09.
-//
 
 import Foundation
 import UIKit
@@ -35,6 +33,7 @@ class TestViewController: UIViewController, XMLParserDelegate {
     
     var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
     
+    
     var xmlParser = XMLParser()
     
     //MARK: - 선언하는 부분
@@ -47,11 +46,13 @@ class TestViewController: UIViewController, XMLParserDelegate {
     var efcyQesitm = ""
     var useMethodQesitm = ""
     
+    private let PILL_API_KEY = Bundle.main.object(forInfoDictionaryKey: "PILL_API_KEY") as? String
     func requestApiInfo() {
         // OPEN API 주소
         // 1. URL 만들기
-        guard let url = URL(string: "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=74%2FESKjKOaJf2JxK4pB3NtVMoiq04t2CSj26wZESSyoBx6jWeMAPEA2c5i2X1KhmBiT5S4LYUup9LrxmPctqbg%3D%3D&trustEntpName=%ED%95%9C%EB%AF%B8%EC%95%BD%ED%92%88(%EC%A3%BC)&pageNo=1&startPage=1&numOfRows=1") else { return }
-
+        guard let PILL_API_KEY = PILL_API_KEY else { return }
+        guard let url = URL(string: "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=\(PILL_API_KEY)&trustEntpName=%ED%95%9C%EB%AF%B8%EC%95%BD%ED%92%88(%EC%A3%BC)&pageNo=1&startPage=1&numOfRows=1") else { return }
+        print(url)
         // 2. URLSession을 사용하여 데이터 로드
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -100,8 +101,8 @@ class TestViewController: UIViewController, XMLParserDelegate {
         }()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         requestApiInfo()
+        super.viewDidLoad()
         
         if let userEmail = kakaoAuthManager?.userEmail {
              setEmail(userEmail)
@@ -151,6 +152,50 @@ class TestViewController: UIViewController, XMLParserDelegate {
     func setEmail(_ email: String) {
         print("main email : ",email)
         emailLabel.text = "이메일: \(email)"
+    }
+    
+    // XMLParserDelegate 함수
+        // XML 파서가 시작 테그를 만나면 호출됨
+    public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        currentElement = elementName
+        if (elementName == "item") {
+            pillItem = [String : String]()
+            entpName = ""
+            itemName = ""
+            itemSeq = ""
+            efcyQesitm = ""
+            useMethodQesitm = ""
+        }
+    }
+
+    public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        if (elementName == "item") {
+            pillItem["entpName"] = entpName;
+            pillItem["itemName"] = itemName;
+            pillItem["itemSeq"] = itemSeq;
+            pillItem["efcyQesitm"] = efcyQesitm;
+            pillItem["useMethodQesitm"] = useMethodQesitm;
+            
+            pillItems.append(pillItem)
+        }
+    }
+
+    public func parser(_ parser: XMLParser, foundCharacters string: String) {
+        // 현재 엘리먼트에 따라 변수에 누적
+        if currentElement == "entpName" {
+            entpName += string
+        } else if currentElement == "itemName" {
+            itemName += string
+        } else if currentElement == "itemSeq" {
+            itemSeq += string
+        } else if currentElement == "efcyQesitm" {
+            efcyQesitm += string
+        } else if currentElement == "useMethodQesitm" {
+            useMethodQesitm += string
+        }        // UI 업데이트를 메인 스레드에서 처리
+        print("------2-------",entpName)
+        print("------3------", pillItem["entpName"])
+        print("-----------", pillItems)
     }
     
 }

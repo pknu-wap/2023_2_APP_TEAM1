@@ -1,8 +1,7 @@
 //
 //  AppDelegate.swift
-//  kakaologinUIkit
+//  dailyCare
 //
-//  Created by 서성원 on 2023/10/02.
 //
 
 import UIKit
@@ -19,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // 카카오 key값
+        FirebaseApp.configure()
         if let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] as? String {
             KakaoSDK.initSDK(appKey: nativeAppKey)
         } else {
