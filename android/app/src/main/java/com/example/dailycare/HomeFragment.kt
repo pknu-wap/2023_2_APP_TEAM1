@@ -61,9 +61,7 @@ class HomeFragment : Fragment() {
             ) {
                 // 선택하면 그에 맞는 현재 상황을 보여주기
             }
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
+            override fun onNothingSelected(parent: AdapterView<*>?) { }
         }
     }
 
@@ -71,7 +69,7 @@ class HomeFragment : Fragment() {
         val adapter = RecyclerViewAdapter()
         adapter.dataItems = mDatas
         binding.warningRecyclerView.adapter=adapter
-        binding.warningRecyclerView.layoutManager=LinearLayoutManager(this)
+        binding.warningRecyclerView.layoutManager=LinearLayoutManager(requireContext())
     }
     
     fun initDiseaseData() {
