@@ -9,21 +9,25 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.WarningView
 
     var dataItems = mutableListOf<WarningRecyclerViewItemStateData>()
 
-    inner class WarningViewHolder(private val binding: WarningRecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class WarningViewHolder(private val binding: WarningRecyclerviewItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(warningRecyclerViewItemStateData: WarningRecyclerViewItemStateData) {
             binding.warningTitleTextView.text = warningRecyclerViewItemStateData.warningTitle
             binding.warningDateTextView.text = warningRecyclerViewItemStateData.warningTime
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType:Int) : WarningViewHolder {
-        val binding = WarningRecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WarningViewHolder {
+        val binding = WarningRecyclerviewItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
         return WarningViewHolder(binding)
     }
 
     override fun getItemCount(): Int = dataItems.size
-
-    override fun onBindViewHolder(holder:WarningViewHolder, position:Int) {
+    override fun onBindViewHolder(holder: WarningViewHolder, position: Int) {
         holder.bind(dataItems[position])
     }
 }
