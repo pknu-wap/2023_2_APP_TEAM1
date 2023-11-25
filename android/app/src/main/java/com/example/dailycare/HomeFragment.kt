@@ -16,7 +16,7 @@ import com.example.dailycare.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: RecyclerViewAdapter
-    private var diseaseData = mutableListOf<String>()
+    private var diseaseData = mutableListOf<String>("-선택하세요-", "독감", "A형 간염", "허리디스크")
     private var user = ""
     private val mDatas = mutableListOf<WarningRecyclerViewItemStateData>()
 
@@ -26,6 +26,10 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        initWarningItem()
+        // 만약 새로운 금지사항을 생성한다면 appendDataToWarning() 을 실행한다.
+
+//        setSpinner()
         return binding.root
     }
 
@@ -39,10 +43,8 @@ class HomeFragment : Fragment() {
             }
         }
 
-        initWarningRecyclerView()
-        appendDataToWarning()
-
         setSpinner()
+
     }
 
     private fun appendDataToWarning() {
@@ -52,7 +54,6 @@ class HomeFragment : Fragment() {
     }
 
     fun setSpinner() {
-        initDiseaseData()
         binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -66,16 +67,19 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun initWarningRecyclerView() {
+    fun initWarningItem() {
         val adapter = RecyclerViewAdapter()
         adapter.dataItems = mDatas
         binding.warningRecyclerView.adapter=adapter
-        binding.warningRecyclerView.layoutManager=LinearLayoutManager(requireContext())
+        binding.warningRecyclerView.layoutManager=LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        appendDataToWarning()
+        appendDataToWarning()
+        appendDataToWarning()
     }
     
-    fun initDiseaseData() {
-        diseaseData.add("-선택하세요-")
-    }
+//    fun initDiseaseData() {
+//        diseaseData.add("-선택하세요-")
+//    }
 
     fun setData(disease : String) {
         diseaseData.add(disease)

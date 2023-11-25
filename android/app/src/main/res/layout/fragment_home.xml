@@ -21,36 +21,42 @@
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:src="@drawable/ic_doctor_pic"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout5"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/constraintView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
             <TextView
                 android:id="@+id/usernameTextView"
                 android:layout_width="300dp"
-                android:layout_height="0dp"
+                android:layout_height="50dp"
                 android:text="님"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spinner"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/usernameTextView"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
@@ -63,7 +69,9 @@
             android:layout_height="531dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
 
             <TextView
                 android:id="@+id/checklistTextView"
@@ -72,6 +80,7 @@
                 android:layout_marginStart="50dp"
                 android:text="체크리스트"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/checklistRecyclerView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/warningRecyclerView" />
 
@@ -79,7 +88,9 @@
                 android:id="@+id/warningRecyclerView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/checklistTextView"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/warningTextView" />
 
@@ -89,6 +100,7 @@
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/checklistTextView" />
 
@@ -99,6 +111,7 @@
                 android:layout_marginStart="50dp"
                 android:text="주의사항"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/warningRecyclerView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
