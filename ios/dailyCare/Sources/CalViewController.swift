@@ -1,67 +1,8 @@
-//
-//  ViewController.swift
-//  calView
-//
-//  Created by 서성원 on 2023/11/19.
-//
-
 import UIKit
+import SnapKit
 
 class CalViewController: UIViewController {
     
-    // 날짜 선택 시 뜨는 입력창
-    func showInputDialog() {
-        let alertController = UIAlertController(title: "", message: nil, preferredStyle: .alert)
-
-        // 시간을 24시간 형식으로 선택할 수 있는 UIDatePicker 추가
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .time
-        alertController.view.addSubview(datePicker)
-
-        // 첫 번째 텍스트 필드는 시간 선택을 위한 것이므로, 추가된 datePicker에 대한 참조 저장
-        alertController.textFields?.first?.inputView = datePicker
-
-        alertController.addTextField { textField in
-            textField.placeholder = "약 정보를 입력하세요."
-        }
-
-        let saveAction: (UIAlertAction) -> Void = { [weak self, weak datePicker] _ in
-            guard let self = self,
-                  let datePicker = datePicker,
-                  let textFields = alertController.textFields,
-                  textFields.count >= 2, // 최소한 2개 이상의 텍스트 필드가 존재하는지 확인
-                  let detailsText = textFields[1].text,
-                  let selectedDate = self.selectedDate else {
-                return
-            }
-
-            // 선택된 시간 가져오기
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            let selectedTime = dateFormatter.string(from: datePicker.date)
-
-            self.saveEvent(time: selectedTime, details: detailsText, dateComponents: selectedDate)
-        }
-
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let saveActionAlert = UIAlertAction(title: "Save", style: .default, handler: saveAction)
-
-        alertController.addAction(cancelAction)
-        alertController.addAction(saveActionAlert)
-
-        present(alertController, animated: true)
-    }
-
-        func saveEvent(time: String, details: String, dateComponents: DateComponents) {
-            
-            // 선택된 날짜에 대한 이벤트를 저장하는 과정을 넣어야 됨
-            // 데이터베이스에 저장해야됨
-            
-            print("Selected Date: \(dateComponents.year ?? 0)-\(dateComponents.month ?? 0)-\(dateComponents.day ?? 0)")
-            print("Selected Time: \(time)")
-            print("Event Details: \(details)")
-        }
     
     lazy var dateView: UICalendarView = {
         var view = UICalendarView()
@@ -70,15 +11,66 @@ class CalViewController: UIViewController {
         return view
     }()
     
+    lazy var timeTextField: UITextField = {
+            let textField = UITextField()
+            textField.translatesAutoresizingMaskIntoConstraints = false
+            textField.placeholder = "시간을 선택하세요"
+            textField.borderStyle = .roundedRect
+            return textField
+        }()
+    
+    lazy var CautionTextField: UITextField = {
+            let textField = UITextField()
+            textField.translatesAutoresizingMaskIntoConstraints = false
+            textField.placeholder = "타이머 종류"
+            textField.borderStyle = .roundedRect
+            return textField
+        }()
+    
+    lazy var IllTextField: UITextField = {
+            let textField = UITextField()
+            textField.translatesAutoresizingMaskIntoConstraints = false
+            textField.placeholder = "질병명"
+            textField.borderStyle = .roundedRect
+            return textField
+        }()
+    
+    lazy var stackView : UIStackView = {
+        let stack = UIStackView()
+        stack.spacing = 30
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
+    lazy var datePicker: UIDatePicker = {
+            let picker = UIDatePicker()
+            picker.datePickerMode = .time
+            picker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
+            return picker
+        }()
+    
     var selectedDate: DateComponents? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         applyConstraints()
         setCalendar()
         reloadDateView(date: Date())
+        
+        stackView.addArrangedSubview(timeTextField)
+        stackView.addArrangedSubview(CautionTextField)
+        stackView.addArrangedSubview(IllTextField)
+        
+        self.view.addSubview(stackView)
+        
+        stackView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.top.equalTo(dateView.snp.bottom).offset(5)
+        }
     }
 
     fileprivate func setCalendar() {
@@ -91,12 +83,16 @@ class CalViewController: UIViewController {
     fileprivate func applyConstraints() {
         view.addSubview(dateView)
         
+        
         let dateViewConstraints = [
             dateView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             dateView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             dateView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
         ]
         NSLayoutConstraint.activate(dateViewConstraints)
+        
+        timeTextField.inputView = datePicker
+
     }
     
     func reloadDateView(date: Date?) {
@@ -104,15 +100,25 @@ class CalViewController: UIViewController {
         let calendar = Calendar.current
         dateView.reloadDecorations(forDateComponents: [calendar.dateComponents([.day, .month, .year], from: date!)], animated: true)
     }
+    
+    @objc func datePickerValueChanged() {
+            let selectedDate = datePicker.date
+            // Do something with the selectedDate, such as updating the textField's text
+            let formatter = DateFormatter()
+            formatter.timeStyle = .short
+            timeTextField.text = formatter.string(from: selectedDate)
+        }
+    
 }
 
 extension CalViewController: UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate {
     
+    // UICalendarView
     func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
         if let selectedDate = selectedDate, selectedDate == dateComponents {
             return .customView {
                 let label = UILabel()
-                label.text = "🐶"
+                label.text = "" // 캘린더에 보일 정보
                 label.textAlignment = .center
                 return label
             }
@@ -120,15 +126,16 @@ extension CalViewController: UICalendarViewDelegate, UICalendarSelectionSingleDa
         return nil
     }
     
-    // 달력에서 날짜 선택했을 경우 행동
-        func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
-            selection.setSelected(dateComponents, animated: true)
-            selectedDate = dateComponents
-            reloadDateView(date: Calendar.current.date(from: dateComponents!))
-            
-            // 날짜 선택 시 입력창 띄우기
-            showInputDialog()
-        }
+    // 달력에서 날짜 선택했을 경우
+    func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
+        selection.setSelected(dateComponents, animated: true)
+        selectedDate = dateComponents
+        reloadDateView(date: Calendar.current.date(from: dateComponents!))
+        
+        if let selectedDate = selectedDate {
+                print("Selected Date: \(String(describing: selectedDate))")
+            } else {
+                print("No date selected")
+            }
     }
-
-
+}
