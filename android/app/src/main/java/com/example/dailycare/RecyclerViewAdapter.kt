@@ -8,6 +8,7 @@ import com.example.dailycare.databinding.WarningRecyclerviewItemBinding
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.WarningViewHolder>() {
 
     var dataItems = mutableListOf<WarningRecyclerViewItemStateData>()
+    val spaceDecoration = HorizontalSpaceDecoration(20)
 
     inner class WarningViewHolder(private val binding: WarningRecyclerviewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
