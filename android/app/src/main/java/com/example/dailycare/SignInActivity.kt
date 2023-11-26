@@ -14,14 +14,11 @@ import com.google.firebase.auth.GoogleAuthProvider
 
 class SignInActivity : AppCompatActivity() {
 
-
     companion object {
         private const val RC_SIGN_IN = 9001
     }
 
     private lateinit var auth: FirebaseAuth
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,19 +26,15 @@ class SignInActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-
-
         val currentUser = auth.currentUser
 
         if (currentUser != null) {
             // The user is already signed in, navigate to MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, NaviActivity::class.java)
+
             startActivity(intent)
             finish() // finish the current activity to prevent the user from coming back to the SignInActivity using the back button
         }
-
-
-
 
         val signInButton = findViewById<Button>(R.id.signInButton)
         signInButton.setOnClickListener {
@@ -69,7 +62,8 @@ class SignInActivity : AppCompatActivity() {
                 val account = task.getResult(ApiException::class.java)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
-                Toast.makeText(this, "Google sign in failed: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Google sign in failed: ${e.message}", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
@@ -80,7 +74,8 @@ class SignInActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
-                    Toast.makeText(this, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT)
+                        .show()
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 } else {

@@ -6,10 +6,11 @@
             <gradient
                 android:type="linear"
                 android:angle="90"
-                android:endColor="#8FE9C1"
-                android:startColor="#A6DCCD"/>
+                android:endColor="#FFFFFF"
+                android:centerColor="#8097B0D6"
+                android:startColor="#FFCCFFEF"/>
 
-            <corners android:radius="10dp"/>
+            <corners android:radius="20dp"/>
         </shape>
     </item>
 
