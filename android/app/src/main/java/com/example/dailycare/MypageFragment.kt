@@ -21,6 +21,15 @@ class MypageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMypageBinding.inflate(inflater, container, false)
+
+        binding.bugFixRequestTextView.setOnClickListener {
+
+        }
+
+        binding.watchMyRecordTextView.setOnClickListener {
+
+        }
+
         return binding.root
     }
 

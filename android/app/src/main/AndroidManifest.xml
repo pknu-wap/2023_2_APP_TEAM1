@@ -26,9 +26,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NaviActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

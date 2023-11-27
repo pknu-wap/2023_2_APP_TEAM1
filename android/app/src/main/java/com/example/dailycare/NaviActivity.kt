@@ -13,16 +13,3 @@ private const val TAG_MY_PAGE = "mypage_fragment"
 private const val TAG_MEDICINE = "medicine_info_fragment"
 private const val TAG_TIMER = "timer_fragment"
 
-class NaviActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityNaviBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityNaviBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        NavigationUI.setupWithNavController(binding.bottomNavigationView, navController)
-    }
-}
