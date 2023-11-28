@@ -99,12 +99,6 @@ class DiseasePageViewController: UIViewController {
         self.view.backgroundColor = .white
         let startColor = UIColor(red: 0.592, green: 0.69, blue: 0.839, alpha: 0.7)
         let endColor = UIColor(red: 0.8, green: 1, blue: 0.937, alpha: 1)
-        
-
-        
-
-        
-        
         self.navigationItem.rightBarButtonItem = self.rightbutton
         self.title = "상세 정보"
         self.view.addSubview(DiseaseInfoView)

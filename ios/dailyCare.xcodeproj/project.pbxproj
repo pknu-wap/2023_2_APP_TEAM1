@@ -14,7 +14,7 @@
 		1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE42B03B1AE00EEDF28 /* MyCell.swift */; };
 		1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */; };
 		1299D4EC2ADD5A5B00BB675F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */; };
-		12ABD8DB2B159E6E00B22331 /* mediPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ABD8DA2B159E6D00B22331 /* mediPageViewController.swift */; };
+		129B6AF72B15C9D000B952A8 /* mediPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */; };
 		12C071632AD15759008474AB /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071622AD15759008474AB /* KakaoSDK */; };
 		12C071652AD15759008474AB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071642AD15759008474AB /* KakaoSDKAuth */; };
 		12C071672AD15759008474AB /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071662AD15759008474AB /* KakaoSDKCert */; };
@@ -84,7 +84,7 @@
 		1284FBE42B03B1AE00EEDF28 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
 		1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		12ABD8DA2B159E6D00B22331 /* mediPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = mediPageViewController.swift; path = ../../../../../../Downloads/mediPageViewController.swift; sourceTree = "<group>"; };
+		129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mediPageViewController.swift; sourceTree = "<group>"; };
 		12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthM.swift; sourceTree = "<group>"; };
 		12DC70362B142453003D1E49 /* CalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalViewController.swift; sourceTree = "<group>"; };
 		12DC70382B142518003D1E49 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -183,8 +183,8 @@
 				1237AFC42B142ADE009B05CA /* Main */,
 				1237AFC32B142ACB009B05CA /* Login */,
 				12DC70362B142453003D1E49 /* CalViewController.swift */,
-				12ABD8DA2B159E6D00B22331 /* mediPageViewController.swift */,
 				1284FBE12B01DA3500EEDF28 /* TestViewController.swift */,
+				129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */,
 				1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */,
 				12DC70382B142518003D1E49 /* TabBarViewController.swift */,
 				1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */,
@@ -371,13 +371,13 @@
 			files = (
 				1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */,
 				12DC70372B142453003D1E49 /* CalViewController.swift in Sources */,
+				129B6AF72B15C9D000B952A8 /* mediPageViewController.swift in Sources */,
 				12DC70392B142518003D1E49 /* TabBarViewController.swift in Sources */,
 				1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */,
 				EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */,
 				12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */,
 				12080C212B15A42500669617 /* DiseasePageViewController.swift in Sources */,
 				EFED715C2ACB0148004ED7C7 /* LoginViewController.swift in Sources */,
-				12ABD8DB2B159E6E00B22331 /* mediPageViewController.swift in Sources */,
 				12DE5B9E2AEF937E0080E1FC /* MainViewController.swift in Sources */,
 				12080C222B15A42500669617 /* MyPageViewController.swift in Sources */,
 				1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */,
