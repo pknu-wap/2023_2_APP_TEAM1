@@ -3,11 +3,11 @@ import SnapKit
 
 class CalViewController: UIViewController {
     
-    
     lazy var dateView: UICalendarView = {
         var view = UICalendarView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.wantsDateDecorations = true
+        view.backgroundColor = .white
         return view
     }()
     
@@ -22,7 +22,7 @@ class CalViewController: UIViewController {
     lazy var CautionTextField: UITextField = {
             let textField = UITextField()
             textField.translatesAutoresizingMaskIntoConstraints = false
-            textField.placeholder = "타이머 종류"
+            textField.placeholder = "주의사항"
             textField.borderStyle = .roundedRect
             return textField
         }()
@@ -67,10 +67,13 @@ class CalViewController: UIViewController {
         
         self.view.addSubview(stackView)
         
-        stackView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.top.equalTo(dateView.snp.bottom).offset(5)
-        }
+        
+//        stackView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.top.equalTo(dateView.snp.bottom).offset(10)
+//            make.bottom.equalTo(dateView.snp.bottom).offset(-10)
+//        }
+        stackView.backgroundColor = .white
     }
 
     fileprivate func setCalendar() {
@@ -81,15 +84,24 @@ class CalViewController: UIViewController {
     }
     
     fileprivate func applyConstraints() {
+        
+        let safeArea = view.safeAreaLayoutGuide
+        
         view.addSubview(dateView)
         
         
-        let dateViewConstraints = [
-            dateView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            dateView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            dateView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-        ]
-        NSLayoutConstraint.activate(dateViewConstraints)
+//        let dateViewConstraints = [
+//            dateView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+//            dateView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+//        ]
+//        NSLayoutConstraint.activate(dateViewConstraints)
+        
+//        NSLayoutConstraint.activate([
+//            stackView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+//            stackView.topAnchor.constraint(equalTo: dateView.bottomAnchor, constant: 10),
+//            stackView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+//        
+//        ])
         
         timeTextField.inputView = datePicker
 
@@ -126,16 +138,16 @@ extension CalViewController: UICalendarViewDelegate, UICalendarSelectionSingleDa
         return nil
     }
     
-    // 달력에서 날짜 선택했을 경우
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
         selection.setSelected(dateComponents, animated: true)
         selectedDate = dateComponents
         reloadDateView(date: Calendar.current.date(from: dateComponents!))
         
         if let selectedDate = selectedDate {
-                print("Selected Date: \(String(describing: selectedDate))")
-            } else {
-                print("No date selected")
-            }
+                    let formattedDate = DateFormatter.localizedString(from: Calendar.current.date(from: selectedDate)!, dateStyle: .long, timeStyle: .none)
+                    print("Selected Date: \(formattedDate)")
+                } else {
+                    print("No date selected")
+                }
     }
 }
