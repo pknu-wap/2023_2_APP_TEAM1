@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12080C212B15A42500669617 /* DiseasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12080C1F2B15A42400669617 /* DiseasePageViewController.swift */; };
+		12080C222B15A42500669617 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12080C202B15A42400669617 /* MyPageViewController.swift */; };
 		1237AFC62B142EC6009B05CA /* PillSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */; };
 		1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE12B01DA3500EEDF28 /* TestViewController.swift */; };
 		1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE42B03B1AE00EEDF28 /* MyCell.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12080C1F2B15A42400669617 /* DiseasePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiseasePageViewController.swift; sourceTree = "<group>"; };
+		12080C202B15A42400669617 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillSearchViewController.swift; sourceTree = "<group>"; };
 		127ABB592ACFB5CE007E8D5E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1284FBE12B01DA3500EEDF28 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */,
 				12DC70382B142518003D1E49 /* TabBarViewController.swift */,
 				1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */,
+				12080C1F2B15A42400669617 /* DiseasePageViewController.swift */,
+				12080C202B15A42400669617 /* MyPageViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -369,9 +375,11 @@
 				1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */,
 				EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */,
 				12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */,
+				12080C212B15A42500669617 /* DiseasePageViewController.swift in Sources */,
 				EFED715C2ACB0148004ED7C7 /* LoginViewController.swift in Sources */,
 				12ABD8DB2B159E6E00B22331 /* mediPageViewController.swift in Sources */,
 				12DE5B9E2AEF937E0080E1FC /* MainViewController.swift in Sources */,
+				12080C222B15A42500669617 /* MyPageViewController.swift in Sources */,
 				1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */,
 				EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */,
 				EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */,

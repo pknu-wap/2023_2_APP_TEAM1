@@ -50,16 +50,16 @@ class PillSearchViewController: UIViewController {
             view.addSubview(dimmedView)
         }
         
-        private func bind() {
-            viewModel
-                .exploreModel
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] _ in
-                    self?.collectionView?.reloadData()
-                }
-                .store(in: &cancellables)
-        }
-        
+//        private func bind() {
+//            viewModel
+//                .exploreModel
+//                .receive(on: DispatchQueue.main)
+//                .sink { [weak self] _ in
+//                    self?.collectionView?.reloadData()
+//                }
+//                .store(in: &cancellables)
+//        }
+//        
         private func setSearchBar() {
             searchBar.delegate = self
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cancelButtonDidTap))
