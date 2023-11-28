@@ -10,7 +10,7 @@ class TabBarViewController: UITabBarController {
         
         // Do any additional setup after loading the view.
         let homeVC = MainViewController()
-        let searchVC = TestViewController()
+        let searchVC = PillSearchViewController()
         let CalVC = CalViewController()
         
         //각 tab bar의 viewcontroller 타이틀 설정

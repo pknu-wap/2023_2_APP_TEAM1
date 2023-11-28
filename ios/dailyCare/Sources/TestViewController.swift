@@ -33,7 +33,6 @@ class TestViewController: UIViewController, XMLParserDelegate {
     
     var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
     
-    
     var xmlParser = XMLParser()
     
     //MARK: - 선언하는 부분

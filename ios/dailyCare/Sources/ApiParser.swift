@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Combine
 
-class ApiParser : UIViewController, XMLParserDelegate{
+class ApiParser : ObservableObject {
     
     var xmlParser = XMLParser()
     
@@ -41,7 +41,6 @@ class ApiParser : UIViewController, XMLParserDelegate{
                 // 3. 데이터를 가지고 작업 수행
                 let xmlParser = XMLParser(data: data)
                 // 이제 xmlParser를 사용하여 데이터를 파싱하고 필요한 작업을 수행할 수 있습니다.
-                xmlParser.delegate = self;
                 xmlParser.parse()
             }
         }.resume() // URLSession 작업 시작
