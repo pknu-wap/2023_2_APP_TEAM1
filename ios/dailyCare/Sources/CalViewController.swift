@@ -64,13 +64,26 @@ class CalViewController: UIViewController {
         stackView.addArrangedSubview(timeTextField)
         stackView.addArrangedSubview(CautionTextField)
         stackView.addArrangedSubview(IllTextField)
-        
+        self.view.backgroundColor = .white
         self.view.addSubview(stackView)
+<<<<<<< Updated upstream
         
         stackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.top.equalTo(dateView.snp.bottom).offset(5)
         }
+=======
+        dateView.snp.makeConstraints {
+            make in make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+        }
+        
+//        stackView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.top.equalTo(dateView.snp.bottom).offset(10)
+//            make.bottom.equalTo(dateView.snp.bottom).offset(-10)
+//        }
+        stackView.backgroundColor = .white
+>>>>>>> Stashed changes
     }
 
     fileprivate func setCalendar() {
