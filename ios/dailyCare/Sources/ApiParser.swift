@@ -10,14 +10,14 @@ import UIKit
 import SnapKit
 import Combine
 
-class ApiParser : ObservableObject {
+class ApiParser : NSObject, ObservableObject, XMLParserDelegate {
     
     var xmlParser = XMLParser()
     
     //MARK: - 선언하는 부분
     var currentElement = ""                // 현재 Element
-    var pillItems = [[String : String]]() // 영화 item Dictional Array
-    var pillItem = [String: String]()     // 영화 item Dictionary
+    @Published var pillItems = [[String : String]]() // 영화 item Dictional Array
+    @Published var pillItem = [String: String]()     // 영화 item Dictionary
     var entpName = ""
     var itemName = "활명수"
     var itemSeq = ""
@@ -42,6 +42,7 @@ class ApiParser : ObservableObject {
                 let xmlParser = XMLParser(data: data)
                 // 이제 xmlParser를 사용하여 데이터를 파싱하고 필요한 작업을 수행할 수 있습니다.
                 xmlParser.parse()
+                print("TestHello")
             }
         }.resume() // URLSession 작업 시작
     }

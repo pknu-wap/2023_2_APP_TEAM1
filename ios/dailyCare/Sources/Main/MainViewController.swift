@@ -20,7 +20,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             fatalError("init(coder:) has not been implemented")
         }
 
-    var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
+    lazy var kakaoAuthVM: KakaoAuthM = { KakaoAuthM() } ()
     
     // 질병 선택 창
     lazy var illSelector: UIPickerView = {
@@ -184,13 +184,20 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         view.backgroundColor = .white
         
-//        if let userEmail = kakaoAuthManager?.userEmail {
-//            userName(userEmail)
-//         }
-        if let userNicname = kakaoAuthManager?.userNickname {
-            userName(userNicname)
+        if let userEmail = kakaoAuthVM.userEmail {
+            print(userEmail)
+            userName(userEmail)
          }
 
+        let userEmail = KakaoAuthM.shared.userEmail ?? "N/A"
+        let userNickname = KakaoAuthM.shared.userNickname
+        
+        if let userNicname = kakaoAuthVM.userNickname {
+            print(userNicname)
+            userName(userNicname)
+         }
+        print(userEmail)
+        print("hello")
         MainViewController()
         caution()
         checkList()
