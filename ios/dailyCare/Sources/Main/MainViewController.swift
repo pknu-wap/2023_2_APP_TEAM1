@@ -143,11 +143,12 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
 
     var CautionSource: [String] = [] {
-            didSet {
-                // Reload or update your collection view when CautionSource is updated
-                cautionView.reloadData()
-            }
-        }
+           didSet {
+               // Reload or update your collection view when CautionSource is updated
+               cautionView.reloadData()
+           }
+       }
+    
     var CheckSource : [String] = []
 
     lazy var cautionView: UICollectionView = {
@@ -319,7 +320,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 cell.model = CheckSource[indexPath.item]
             }
         }
-
         return cell
     }
 }
