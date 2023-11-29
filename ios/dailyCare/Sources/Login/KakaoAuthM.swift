@@ -14,6 +14,8 @@ import FirebaseAuth
 
 class KakaoAuthM: ObservableObject {
     
+    static let shared = KakaoAuthM() // 싱글톤 인스턴스
+    
     var subscriptions = Set<AnyCancellable>()
 
     @Published var isLoggedIn : Bool = false

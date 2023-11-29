@@ -1,17 +1,25 @@
 
 import UIKit
+import Combine
 
 class TabBarViewController: UITabBarController {
     
     let HEIGHT_TAB_BAR:CGFloat = 100
     
+    var kakaoAuthManager: KakaoAuthM?   // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
+    
+    @Published var semail: String?    // 데이터를 전달받아 저장할 변수
+    private var cancellables: Set<AnyCancellable> = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         // Do any additional setup after loading the view.
         let homeVC = MainViewController()
         let searchVC = PillSearchViewController()
-        let CalVC = CalViewController()
+        let CalVC = TestViewController()
         let MyPageVC = mediPageViewController()
         
         //각 tab bar의 viewcontroller 타이틀 설정
@@ -46,6 +54,14 @@ class TabBarViewController: UITabBarController {
         navigationMyPage.navigationBar.prefersLargeTitles = true
         
         setViewControllers([navigationHome, navigationSearch, navigationLibrary, navigationMyPage], animated: false)
+        $semail
+            .sink { [weak self] newEmail in
+                guard let self = self else { return }
+                print("semail changed to: \(newEmail ?? "nil")")
+                // 여기에서 원하는 동작 수행
+                CalVC.hello = semail
+            }
+            .store(in: &cancellables)
         
     }
     override func viewDidLayoutSubviews() {
@@ -55,8 +71,10 @@ class TabBarViewController: UITabBarController {
                 tabFrame.origin.y = self.view.frame.size.height - HEIGHT_TAB_BAR
                 self.tabBar.frame = tabFrame
             }
+    
     func setEmail(_ email: String) {
         print("main email : ",email)
+        semail = email
     }
     
 }

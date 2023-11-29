@@ -30,20 +30,23 @@ struct item {
 }
 
 class TestViewController: UIViewController, XMLParserDelegate {
-    
     var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
     
     var xmlParser = XMLParser()
     
+    @Published var hello : String?
+    
     //MARK: - 선언하는 부분
     var currentElement = ""                // 현재 Element
-    var pillItems = [[String : String]]() // 영화 item Dictional Array
+    @Published var pillItems = [[String : String]]() // 영화 item Dictional Array
     var pillItem = [String: String]()     // 영화 item Dictionary
     var entpName = ""
-    var itemName = ""
+    @Published var itemName = ""
     var itemSeq = ""
     var efcyQesitm = ""
     var useMethodQesitm = ""
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     private let PILL_API_KEY = Bundle.main.object(forInfoDictionaryKey: "PILL_API_KEY") as? String
     func requestApiInfo() {
@@ -51,7 +54,6 @@ class TestViewController: UIViewController, XMLParserDelegate {
         // 1. URL 만들기
         guard let PILL_API_KEY = PILL_API_KEY else { return }
         guard let url = URL(string: "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=\(PILL_API_KEY)&trustEntpName=%ED%95%9C%EB%AF%B8%EC%95%BD%ED%92%88(%EC%A3%BC)&pageNo=1&startPage=1&numOfRows=1") else { return }
-        print(url)
         // 2. URLSession을 사용하여 데이터 로드
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -68,6 +70,7 @@ class TestViewController: UIViewController, XMLParserDelegate {
     
     lazy var emailLabel: UILabel = {
         let label = UILabel()
+        label.text = hello
         label.textColor = UIColor.black
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
@@ -100,12 +103,11 @@ class TestViewController: UIViewController, XMLParserDelegate {
         }()
     
     override func viewDidLoad() {
-        requestApiInfo()
         super.viewDidLoad()
+        requestApiInfo()
         
-        if let userEmail = kakaoAuthManager?.userEmail {
-             setEmail(userEmail)
-         }
+        
+        print("--------2-----------",hello)
         // 그라데이션 색상 설정
         let startColor = UIColor(red: 0.63, green: 0.91, blue: 0.56, alpha: 1.0).cgColor
         
@@ -121,9 +123,10 @@ class TestViewController: UIViewController, XMLParserDelegate {
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0) // 중간상단
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0) // 중간하단
         
-        print("------1-------",entpName)
+//        print("------1-------",entpName)
         // 그라데이션 레이어를 뷰의 레이어로 추가
         self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
         // "Hello, World!" 레이블 추가
         let helloLabel = UILabel()
         helloLabel.text = entpName
@@ -131,6 +134,7 @@ class TestViewController: UIViewController, XMLParserDelegate {
         helloLabel.font = UIFont.systemFont(ofSize: 24) // 텍스트 폰트 및 크기 설정
         helloLabel.textAlignment = .center // 텍스트 정렬 설정
         helloLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         
         // 스택뷰에 "Hello, World!" 레이블 추가
         stackView.addArrangedSubview(helloLabel)
@@ -141,9 +145,16 @@ class TestViewController: UIViewController, XMLParserDelegate {
         self.view.addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.center.equalTo(self.view)
-            
         }
-            }
+//        $itemName
+//            .sink { [weak self] itemNa in
+//                guard let self = self else { return }
+//                helloLabel.text = itemNa
+//                print("semail changed to: \(itemNa ?? "nil")")
+//                // 여기에서 원하는 동작 수행
+//            }
+//            .store(in: &cancellables)
+    }
     
     @objc func Tapped() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -192,31 +203,10 @@ class TestViewController: UIViewController, XMLParserDelegate {
         } else if currentElement == "useMethodQesitm" {
             useMethodQesitm += string
         }        // UI 업데이트를 메인 스레드에서 처리
-        print("------2-------",entpName)
-        print("------3------", pillItem["entpName"])
-        print("-----------", pillItems)
+//        print("------2-------",entpName)
+//        print("------3------", pillItem["entpName"])
+//        print("-----------", pillItems)
     }
     
 }
-
-
-#if DEBUG
-
-import SwiftUI
-
-struct ViewControllerPresentable2: UIViewControllerRepresentable {
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-    }
-    
-    func makeUIViewController(context: Context) -> some UIViewController {
-        MainViewController()
-    }
-}
-
-struct ViewControllerPrePresentable_PreviewProvider2 : PreviewProvider {
-    static var previews: some View {
-        ViewControllerPresentable()
-    }
-}
-#endif
 
