@@ -15,7 +15,15 @@ class MyCell: UICollectionViewCell {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .left
+        label.textColor = .white
+        return label
+    }()
 
+    lazy var bottomRightLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .right
+        label.textColor = .white
         return label
     }()
 
@@ -34,12 +42,20 @@ class MyCell: UICollectionViewCell {
 
     private func addSubviews() {
         addSubview(titleLabel)
+        addSubview(bottomRightLabel)
     }
 
     private func configure() {
         titleLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.leading.equalToSuperview().offset(8)
+            make.top.equalToSuperview().offset(8)
         }
+
+        bottomRightLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-8)
+            make.bottom.equalToSuperview().offset(-8)
+        }
+
         let startColor = UIColor(red: 1.0, green: 0.53, blue: 0.81, alpha: 1.0).cgColor
         let endColor = UIColor(red: 0.95, green: 0.82, blue: 0.99, alpha: 1.0).cgColor
                 
@@ -59,9 +75,10 @@ class MyCell: UICollectionViewCell {
 
     private func bind() {
         titleLabel.text = model
+        bottomRightLabel.text = model // You can replace this with the appropriate text for the bottom-right label
     }
-
 }
+
 extension MyCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 원하는 셀 크기를 CGSize로 반환합니다.
