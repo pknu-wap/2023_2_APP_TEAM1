@@ -11,8 +11,10 @@ import Combine
 
 class PillSearchViewController: UIViewController {
     
+    var ApiInfo: ApiParser?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
     
     var dataSource: [String] = ["iOS", "iOS 앱", "iOS 앱 개발", "iOS 앱 개발 알아가기", "iOS 앱 개발 알아가기 jake"]
+    private var cancellables: Set<AnyCancellable> = []
     var filteredDataSource: [String] = []
 
     var isEditMode: Bool {
@@ -35,8 +37,24 @@ class PillSearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = nil
+        
+        // ApiParser 객체 초기화
+        ApiInfo = ApiParser()
+        // API 정보 요청
+        ApiInfo?.requestApiInfo()
 
+        ApiInfo?.$pillItems
+            .sink { [weak self] newPillItems in
+                guard let self = self else { return }
+                // UI 업데이트
+                DispatchQueue.main.async {
+                    self.dataSource = newPillItems.map { $0["itemName"] ?? "" }
+                    self.tableView.reloadData()
+                    print("hello",newPillItems)
+                }
+            }
+            .store(in: &cancellables)
+        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true

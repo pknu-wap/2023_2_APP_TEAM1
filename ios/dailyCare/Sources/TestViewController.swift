@@ -129,7 +129,8 @@ class TestViewController: UIViewController, XMLParserDelegate {
         
         // "Hello, World!" 레이블 추가
         let helloLabel = UILabel()
-        helloLabel.text = entpName
+        helloLabel.text = "hello"
+        
         helloLabel.textColor = UIColor.white // 텍스트 색상 설정
         helloLabel.font = UIFont.systemFont(ofSize: 24) // 텍스트 폰트 및 크기 설정
         helloLabel.textAlignment = .center // 텍스트 정렬 설정
@@ -146,14 +147,14 @@ class TestViewController: UIViewController, XMLParserDelegate {
         stackView.snp.makeConstraints { make in
             make.center.equalTo(self.view)
         }
-//        $itemName
-//            .sink { [weak self] itemNa in
-//                guard let self = self else { return }
-//                helloLabel.text = itemNa
-//                print("semail changed to: \(itemNa ?? "nil")")
-//                // 여기에서 원하는 동작 수행
-//            }
-//            .store(in: &cancellables)
+        $itemName
+            .sink { [weak self] itemNa in
+                guard let self = self else { return }
+                helloLabel.text = itemNa
+                print("semail changed to: \(itemNa ?? "nil")")
+                // 여기에서 원하는 동작 수행
+            }
+            .store(in: &cancellables)
     }
     
     @objc func Tapped() {

@@ -12,6 +12,9 @@ import Combine
 
 class MyPageViewController: UIViewController {
     
+//    @Published var semail: String?    // 데이터를 전달받아 저장할 변수
+    @Published var semail: [String] = []    // 데이터를 전달받아 저장할 변수
+    
     // 스택 뷰 만들기
     lazy var stackView: UIStackView = {
         let stack = UIStackView()
@@ -73,15 +76,22 @@ class MyPageViewController: UIViewController {
     lazy var userImageView : UIImageView =  {
         //let userImage = kakaoAuthManager?.userNickname
         var view = UIImageView()
-        var img = UIImage(named:"DailyCareLogo")
-        view.image = img
+        if let imageUrl = URL(string: self.semail[2]) {
+                    URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+                        if let data = data, let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                view.image = image
+                            }
+                        }
+                    }.resume()
+                }
         return view
     }()
     
     // 유저 닉네임
     lazy var userName : UILabel = {
         var label = UILabel()
-        label.text = "유저 닉네임"
+        label.text = semail[1]
         label.textColor = .black
         return label
     }()
@@ -89,8 +99,11 @@ class MyPageViewController: UIViewController {
     // 유저 이메일
     lazy var userEmail : UILabel = {
         var label = UILabel()
-        label.text = "유저 이메일"
+        label.text = semail[0]
         label.textColor = .black
+        label.numberOfLines = 0 // 0으로 설정하면 텍스트 크기에 따라 여러 줄로 표시됩니다.
+        label.adjustsFontSizeToFitWidth = true // 텍스트 크기에 맞게 자동으로 크기를 조절합니다.
+        label.minimumScaleFactor = 0.5 // 최소 축소 비율을 설정할 수 있습니다.
         return label
     }()
     

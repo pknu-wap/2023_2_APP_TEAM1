@@ -21,6 +21,7 @@ class KakaoAuthM: ObservableObject {
     @Published var isLoggedIn : Bool = false
     @Published var userEmail: String? = nil
     @Published var userNickname: String? = nil
+    @Published var userInfo: [String] = []
     
     lazy var loginStatusInfo : AnyPublisher<String?, Never> =
     $isLoggedIn.compactMap{ $0 ? "로그인 상태" : "로그아웃 상태"}.eraseToAnyPublisher()
@@ -48,10 +49,15 @@ class KakaoAuthM: ObservableObject {
                             print(error)
                         } else {
                             if let email = kuser?.kakaoAccount?.email,
-                               let nickname = kuser?.kakaoAccount?.profile?.nickname {
+                               let nickname = kuser?.kakaoAccount?.profile?.nickname,
+                               let profileImageURL = kuser?.kakaoAccount?.profile?.profileImageUrl?.absoluteString {
                                 DispatchQueue.main.async {
-                                    self.userEmail = email
-                                    self.userNickname = nickname
+//                                    self.userEmail = email
+//                                    self.userNickname = nickname
+                                    self.userInfo.append(email)
+                                    self.userInfo.append(nickname)
+                                    self.userInfo.append(profileImageURL)
+                                    print("------------hello-",self.userInfo)
                                 }
 
                                 Auth.auth().createUser(withEmail: email, password: "\(String(describing: kuser?.id))") { fuser, error in
@@ -99,10 +105,15 @@ class KakaoAuthM: ObservableObject {
                             print(error)
                         } else {
                             if let email = kuser?.kakaoAccount?.email,
-                               let nickname = kuser?.kakaoAccount?.profile?.nickname {
+                               let nickname = kuser?.kakaoAccount?.profile?.nickname,
+                               let profileImageURL = kuser?.kakaoAccount?.profile?.profileImageUrl?.absoluteString {
                                 DispatchQueue.main.async {
                                     self.userEmail = email
                                     self.userNickname = nickname
+                                    self.userInfo.append(email)
+                                    self.userInfo.append(nickname)
+                                    self.userInfo.append(profileImageURL)
+                                    print("------------hello-",self.userInfo)
                                 }
 
                                 Auth.auth().createUser(withEmail: email, password: "\(String(describing: kuser?.id))") { fuser, error in

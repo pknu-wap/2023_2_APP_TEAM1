@@ -12,7 +12,6 @@ import Combine
 
 class mediPageViewController: UIViewController {
     
-
     // 주의사항 뷰
     lazy var CautionView: UIView = {
         var view = UIView()
@@ -97,6 +96,11 @@ class mediPageViewController: UIViewController {
         }
         return view
     }()
+    lazy var rightbutton: UIBarButtonItem = {
+        let img = UIImage(named: "virus.png")
+        let button = UIBarButtonItem(image: img, style: .plain, target: self, action: #selector(rightButtonClicked))
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +133,9 @@ class mediPageViewController: UIViewController {
             make.size.equalTo(CGSize(width: 327, height: 116))
             make.centerX.equalToSuperview()
         }
-        
-        
+    }
+    @objc func rightButtonClicked() {
+            let mainViewController = DiseasePageViewController()
+            self.navigationController?.pushViewController(mainViewController, animated: true)
     }
 }
