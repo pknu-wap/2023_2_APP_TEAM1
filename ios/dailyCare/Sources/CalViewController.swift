@@ -37,7 +37,7 @@ class CalViewController: UIViewController {
     
     lazy var stackView : UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 30
+        stack.spacing = 10
         stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fill
@@ -47,6 +47,7 @@ class CalViewController: UIViewController {
     
     lazy var datePicker: UIDatePicker = {
             let picker = UIDatePicker()
+            picker.preferredDatePickerStyle = .inline
             picker.datePickerMode = .time
             picker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
             return picker
@@ -60,12 +61,13 @@ class CalViewController: UIViewController {
         applyConstraints()
         setCalendar()
         reloadDateView(date: Date())
-        
+        self.view.addSubview(datePicker)
         stackView.addArrangedSubview(timeTextField)
         stackView.addArrangedSubview(CautionTextField)
         stackView.addArrangedSubview(IllTextField)
         self.view.backgroundColor = .white
         self.view.addSubview(stackView)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         
         stackView.snp.makeConstraints { make in
@@ -75,6 +77,15 @@ class CalViewController: UIViewController {
 =======
         dateView.snp.makeConstraints {
             make in make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+=======
+        stackView.snp.makeConstraints {
+            make in make.top.equalTo(dateView.snp.bottom)
+            make.left.equalToSuperview().offset(10)
+        }
+        datePicker.snp.makeConstraints {
+            make in make.left.equalTo(stackView.snp.right).offset(10)
+            make.top.equalTo(dateView.snp.bottom).inset(10)
+>>>>>>> Stashed changes
         }
         
 //        stackView.snp.makeConstraints { make in
@@ -104,7 +115,7 @@ class CalViewController: UIViewController {
         ]
         NSLayoutConstraint.activate(dateViewConstraints)
         
-        timeTextField.inputView = datePicker
+        //timeTextField.inputView = datePicker
 
     }
     

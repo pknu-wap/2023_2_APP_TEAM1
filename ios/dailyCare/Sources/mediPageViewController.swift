@@ -124,13 +124,20 @@ class mediPageViewController: UIViewController {
         
         
         
+        
+        
+        
+        
         let startColor = UIColor(red: 0.592, green: 0.69, blue: 0.839, alpha: 0.7)
         let endColor = UIColor(red: 0.8, green: 1, blue: 0.937, alpha: 1)
         MediInfoView.setGradient(color1: startColor, color2: endColor)
         SideEffectView.setGradient(color1: startColor, color2: endColor)
         CautionView.setGradient(color1: startColor, color2: endColor)
+<<<<<<< Updated upstream
         navigationController?.navigationBar.tintColor = .blue
         
+=======
+>>>>>>> Stashed changes
         MediInfoView.snp.makeConstraints {
             make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)

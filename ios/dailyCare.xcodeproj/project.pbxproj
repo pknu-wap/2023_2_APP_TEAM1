@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE12B01DA3500EEDF28 /* TestViewController.swift */; };
 		1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE42B03B1AE00EEDF28 /* MyCell.swift */; };
 		1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */; };
@@ -16,12 +17,21 @@
 		0A843C852B15CBF1004F14E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A843C842B15CBF1004F14E7 /* GoogleService-Info.plist */; };
 		0A843C872B15CBF5004F14E7 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0A843C862B15CBF5004F14E7 /* Config.xcconfig */; };
 		12080C212B15A42500669617 /* DiseasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12080C1F2B15A42400669617 /* DiseasePageViewController.swift */; };
+=======
+		0A943B062B16E8BE007EED19 /* DiseasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A943B052B16E8BE007EED19 /* DiseasePageViewController.swift */; };
+		0A943B0A2B16E8D1007EED19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A943B092B16E8D1007EED19 /* GoogleService-Info.plist */; };
+		0A943B0C2B16E8D6007EED19 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0A943B0B2B16E8D6007EED19 /* Config.xcconfig */; };
+		0A943B102B16E940007EED19 /* mediPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A943B0F2B16E940007EED19 /* mediPageViewController.swift */; };
+>>>>>>> Stashed changes
 		12080C222B15A42500669617 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12080C202B15A42400669617 /* MyPageViewController.swift */; };
 		1237AFC62B142EC6009B05CA /* PillSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */; };
 		1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE12B01DA3500EEDF28 /* TestViewController.swift */; };
 		1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE42B03B1AE00EEDF28 /* MyCell.swift */; };
 		1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */; };
+<<<<<<< Updated upstream
 		129B6AF72B15C9D000B952A8 /* mediPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */; };
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		12C071632AD15759008474AB /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071622AD15759008474AB /* KakaoSDK */; };
 		12C071652AD15759008474AB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071642AD15759008474AB /* KakaoSDKAuth */; };
@@ -84,6 +94,7 @@
 
 /* Begin PBXFileReference section */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		127ABB592ACFB5CE007E8D5E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1284FBE12B01DA3500EEDF28 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		1284FBE42B03B1AE00EEDF28 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
@@ -99,6 +110,17 @@
 		1284FBE42B03B1AE00EEDF28 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
 		129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mediPageViewController.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
+=======
+		0A943B052B16E8BE007EED19 /* DiseasePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiseasePageViewController.swift; path = ../../../../../../Downloads/DiseasePageViewController.swift; sourceTree = "<group>"; };
+		0A943B092B16E8D1007EED19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A943B0B2B16E8D6007EED19 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = ../../../../../Config.xcconfig; sourceTree = "<group>"; };
+		0A943B0F2B16E940007EED19 /* mediPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mediPageViewController.swift; sourceTree = "<group>"; };
+		12080C202B15A42400669617 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillSearchViewController.swift; sourceTree = "<group>"; };
+		1284FBE12B01DA3500EEDF28 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		1284FBE42B03B1AE00EEDF28 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
 >>>>>>> Stashed changes
 		12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthM.swift; sourceTree = "<group>"; };
 		12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -179,9 +201,30 @@
 				EFED715B2ACB0148004ED7C7 /* LoginViewController.swift */,
 				12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */,
 				12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */,
+<<<<<<< Updated upstream
 				1284FBE12B01DA3500EEDF28 /* TestViewController.swift */,
 				1284FBE42B03B1AE00EEDF28 /* MyCell.swift */,
 				1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */,
+=======
+				1284FBE42B03B1AE00EEDF28 /* MyCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		12DB4A502ACEB30300308BC6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1237AFC42B142ADE009B05CA /* Main */,
+				1237AFC32B142ACB009B05CA /* Login */,
+				12DC70362B142453003D1E49 /* CalViewController.swift */,
+				0A943B052B16E8BE007EED19 /* DiseasePageViewController.swift */,
+				0A943B0F2B16E940007EED19 /* mediPageViewController.swift */,
+				1284FBE12B01DA3500EEDF28 /* TestViewController.swift */,
+				1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */,
+				12DC70382B142518003D1E49 /* TabBarViewController.swift */,
+				1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */,
+				12080C202B15A42400669617 /* MyPageViewController.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -200,8 +243,13 @@
 			isa = PBXGroup;
 			children = (
 				EFED71652ACB014A004ED7C7 /* Info.plist */,
+<<<<<<< Updated upstream
 				0A843C862B15CBF5004F14E7 /* Config.xcconfig */,
 				0A843C842B15CBF1004F14E7 /* GoogleService-Info.plist */,
+=======
+				0A943B0B2B16E8D6007EED19 /* Config.xcconfig */,
+				0A943B092B16E8D1007EED19 /* GoogleService-Info.plist */,
+>>>>>>> Stashed changes
 				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
 				EFED71602ACB014A004ED7C7 /* Assets.xcassets */,
 				12DB4A512ACEB43D00308BC6 /* Storyboards */,
@@ -350,8 +398,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< Updated upstream
 				0A843C872B15CBF5004F14E7 /* Config.xcconfig in Resources */,
 				0A843C852B15CBF1004F14E7 /* GoogleService-Info.plist in Resources */,
+=======
+				0A943B0C2B16E8D6007EED19 /* Config.xcconfig in Resources */,
+				0A943B0A2B16E8D1007EED19 /* GoogleService-Info.plist in Resources */,
+>>>>>>> Stashed changes
 				EFED71612ACB014A004ED7C7 /* Assets.xcassets in Resources */,
 				EFED715F2ACB0148004ED7C7 /* Main.storyboard in Resources */,
 			);
@@ -365,9 +418,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */,
+<<<<<<< Updated upstream
 				1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */,
 				EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */,
 				12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */,
+=======
+				12DC70372B142453003D1E49 /* CalViewController.swift in Sources */,
+				0A943B102B16E940007EED19 /* mediPageViewController.swift in Sources */,
+				12DC70392B142518003D1E49 /* TabBarViewController.swift in Sources */,
+				1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */,
+				EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */,
+				12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */,
+				0A943B062B16E8BE007EED19 /* DiseasePageViewController.swift in Sources */,
+>>>>>>> Stashed changes
 				EFED715C2ACB0148004ED7C7 /* LoginViewController.swift in Sources */,
 				12DE5B9E2AEF937E0080E1FC /* MainViewController.swift in Sources */,
 				1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */,
