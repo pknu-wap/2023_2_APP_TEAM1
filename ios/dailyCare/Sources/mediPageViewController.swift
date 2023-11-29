@@ -102,7 +102,6 @@ class mediPageViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        self.title = "상세 정보"
         self.view.addSubview(MediInfoView)
         self.view.addSubview(CautionView)
         self.view.addSubview(SideEffectView)
