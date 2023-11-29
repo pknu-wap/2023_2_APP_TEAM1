@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Combine
 
-class ApiParser : ObservableObject {
+class ApiParser : NSObject, ObservableObject, XMLParserDelegate {
     
     var xmlParser = XMLParser()
     

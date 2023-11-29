@@ -15,16 +15,6 @@ struct tagType {
 struct item {
     var entpName: String
     var itemName: String
-    var itemSeq: String
-    var efcyQesitm: String
-    var useMethodQesitm: String
-    var atpnWarnQesitm: String
-    var atpnQesitm: String
-    var intrcQesitm: String
-    var seQesitm: String
-    var depositMethodQesitm: String
-    var openDe: String
-    var updateDe: String
     var itemImage: String
     var bizrno: String
 }
@@ -42,9 +32,6 @@ class TestViewController: UIViewController, XMLParserDelegate {
     var pillItem = [String: String]()     // 영화 item Dictionary
     var entpName = ""
     @Published var itemName = ""
-    var itemSeq = ""
-    var efcyQesitm = ""
-    var useMethodQesitm = ""
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -53,7 +40,12 @@ class TestViewController: UIViewController, XMLParserDelegate {
         // OPEN API 주소
         // 1. URL 만들기
         guard let PILL_API_KEY = PILL_API_KEY else { return }
-        guard let url = URL(string: "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=\(PILL_API_KEY)&trustEntpName=%ED%95%9C%EB%AF%B8%EC%95%BD%ED%92%88(%EC%A3%BC)&pageNo=1&startPage=1&numOfRows=1") else { return }
+        // Your original API request code
+        guard let itemName = "활명수".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+              let url = URL(string: "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService/getDrbEasyDrugList?serviceKey=\(PILL_API_KEY)&trustEntpName=%ED%95%9C%EB%AF%B8%EC%95%BD%ED%92%88(%EC%A3%BC)&itemName=\(itemName)") else { return }
+
+        print(url)
+
         // 2. URLSession을 사용하여 데이터 로드
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -129,8 +121,6 @@ class TestViewController: UIViewController, XMLParserDelegate {
         
         // "Hello, World!" 레이블 추가
         let helloLabel = UILabel()
-        helloLabel.text = "hello"
-        
         helloLabel.textColor = UIColor.white // 텍스트 색상 설정
         helloLabel.font = UIFont.systemFont(ofSize: 24) // 텍스트 폰트 및 크기 설정
         helloLabel.textAlignment = .center // 텍스트 정렬 설정
@@ -147,15 +137,33 @@ class TestViewController: UIViewController, XMLParserDelegate {
         stackView.snp.makeConstraints { make in
             make.center.equalTo(self.view)
         }
-        $itemName
+
+        $pillItems
             .sink { [weak self] itemNa in
                 guard let self = self else { return }
-                helloLabel.text = itemNa
-                print("semail changed to: \(itemNa ?? "nil")")
-                // 여기에서 원하는 동작 수행
+                print("semail changed to: \(itemNa ?? [])")
+
+                var concatenatedText = ""
+
+                for i in itemNa {
+                    if let itemName = i["itemName"]?.trimmingCharacters(in: .whitespacesAndNewlines) {
+                        concatenatedText += itemName + " "
+                        print("Item Name: \(itemName)")
+                    }
+                }
+
+                DispatchQueue.main.async {
+                    helloLabel.text = concatenatedText
+                }
             }
             .store(in: &cancellables)
+
+
+
+
     }
+    
+    
     
     @objc func Tapped() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -173,21 +181,16 @@ class TestViewController: UIViewController, XMLParserDelegate {
             pillItem = [String : String]()
             entpName = ""
             itemName = ""
-            itemSeq = ""
-            efcyQesitm = ""
-            useMethodQesitm = ""
         }
     }
 
     public func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if (elementName == "item") {
-            pillItem["entpName"] = entpName;
-            pillItem["itemName"] = itemName;
-            pillItem["itemSeq"] = itemSeq;
-            pillItem["efcyQesitm"] = efcyQesitm;
-            pillItem["useMethodQesitm"] = useMethodQesitm;
-            
-            pillItems.append(pillItem)
+            var newItem = [String: String]()
+            newItem["entpName"] = entpName
+            newItem["itemName"] = itemName
+
+            pillItems.append(newItem)
         }
     }
 
@@ -197,16 +200,7 @@ class TestViewController: UIViewController, XMLParserDelegate {
             entpName += string
         } else if currentElement == "itemName" {
             itemName += string
-        } else if currentElement == "itemSeq" {
-            itemSeq += string
-        } else if currentElement == "efcyQesitm" {
-            efcyQesitm += string
-        } else if currentElement == "useMethodQesitm" {
-            useMethodQesitm += string
-        }        // UI 업데이트를 메인 스레드에서 처리
-//        print("------2-------",entpName)
-//        print("------3------", pillItem["entpName"])
-//        print("-----------", pillItems)
+        }
     }
     
 }
