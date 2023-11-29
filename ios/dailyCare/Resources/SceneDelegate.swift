@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //MARK: -push 방식을 위한 선언
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-                let loginViewController = UINavigationController(rootViewController: TestViewController())
+                let loginViewController = UINavigationController(rootViewController: PillSearchViewController())
                 
                 window?.rootViewController = loginViewController
                 window?.makeKeyAndVisible()

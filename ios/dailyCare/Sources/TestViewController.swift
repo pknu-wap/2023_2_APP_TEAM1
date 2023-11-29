@@ -8,17 +8,6 @@ import UIKit
 import SnapKit
 import Combine
 
-struct tagType {
-    let item: [item]
-}
-
-struct item {
-    var entpName: String
-    var itemName: String
-    var itemImage: String
-    var bizrno: String
-}
-
 class TestViewController: UIViewController, XMLParserDelegate {
     var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
     
