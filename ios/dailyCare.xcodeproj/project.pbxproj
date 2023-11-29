@@ -13,7 +13,6 @@
 		1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE12B01DA3500EEDF28 /* TestViewController.swift */; };
 		1284FBE52B03B1AE00EEDF28 /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE42B03B1AE00EEDF28 /* MyCell.swift */; };
 		1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */; };
-		1299D4EC2ADD5A5B00BB675F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */; };
 		129B6AF72B15C9D000B952A8 /* mediPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */; };
 		12C071632AD15759008474AB /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071622AD15759008474AB /* KakaoSDK */; };
 		12C071652AD15759008474AB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12C071642AD15759008474AB /* KakaoSDKAuth */; };
@@ -53,6 +52,9 @@
 		12DE5B9E2AEF937E0080E1FC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */; };
 		12E7BECD2ADAB8510003F123 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 12E7BECC2ADAB8510003F123 /* GoogleSignIn */; };
 		12E7BECF2ADAB8510003F123 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12E7BECE2ADAB8510003F123 /* GoogleSignInSwift */; };
+		EF048FE62B15CB3500D84B54 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EF048FE52B15CB3500D84B54 /* Config.xcconfig */; };
+		EF048FE82B15CB3C00D84B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF048FE72B15CB3C00D84B54 /* GoogleService-Info.plist */; };
+		EF048FEA2B1755F400D84B54 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF048FE92B1755F400D84B54 /* UserInfo.swift */; };
 		EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71572ACB0148004ED7C7 /* AppDelegate.swift */; };
 		EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */; };
 		EFED715C2ACB0148004ED7C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED715B2ACB0148004ED7C7 /* LoginViewController.swift */; };
@@ -79,16 +81,17 @@
 		12080C1F2B15A42400669617 /* DiseasePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiseasePageViewController.swift; sourceTree = "<group>"; };
 		12080C202B15A42400669617 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillSearchViewController.swift; sourceTree = "<group>"; };
-		127ABB592ACFB5CE007E8D5E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1284FBE12B01DA3500EEDF28 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		1284FBE42B03B1AE00EEDF28 /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
-		1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mediPageViewController.swift; sourceTree = "<group>"; };
 		12C80E772ADAB4EC007D6CEE /* GoogleAuthM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthM.swift; sourceTree = "<group>"; };
 		12DC70362B142453003D1E49 /* CalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalViewController.swift; sourceTree = "<group>"; };
 		12DC70382B142518003D1E49 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EF048FE52B15CB3500D84B54 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = ../../../../../../Downloads/Config.xcconfig; sourceTree = "<group>"; };
+		EF048FE72B15CB3C00D84B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF048FE92B1755F400D84B54 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		EFED71542ACB0148004ED7C7 /* dailyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFED71572ACB0148004ED7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 			children = (
 				12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */,
 				1284FBE42B03B1AE00EEDF28 /* MyCell.swift */,
+				EF048FE92B1755F400D84B54 /* UserInfo.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -208,8 +212,8 @@
 			children = (
 				12DB4A512ACEB43D00308BC6 /* Storyboards */,
 				EFED71652ACB014A004ED7C7 /* Info.plist */,
-				127ABB592ACFB5CE007E8D5E /* Config.xcconfig */,
-				1299D4EB2ADD5A5B00BB675F /* GoogleService-Info.plist */,
+				EF048FE52B15CB3500D84B54 /* Config.xcconfig */,
+				EF048FE72B15CB3C00D84B54 /* GoogleService-Info.plist */,
 				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
 				EFED71602ACB014A004ED7C7 /* Assets.xcassets */,
 				EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */,
@@ -357,7 +361,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Resources */,
-				1299D4EC2ADD5A5B00BB675F /* GoogleService-Info.plist in Resources */,
+				EF048FE82B15CB3C00D84B54 /* GoogleService-Info.plist in Resources */,
+				EF048FE62B15CB3500D84B54 /* Config.xcconfig in Resources */,
 				EFED71612ACB014A004ED7C7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +378,7 @@
 				12DC70372B142453003D1E49 /* CalViewController.swift in Sources */,
 				129B6AF72B15C9D000B952A8 /* mediPageViewController.swift in Sources */,
 				12DC70392B142518003D1E49 /* TabBarViewController.swift in Sources */,
+				EF048FEA2B1755F400D84B54 /* UserInfo.swift in Sources */,
 				1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */,
 				EFED71882ACB0C78004ED7C7 /* KakaoAuthM.swift in Sources */,
 				12C80E782ADAB4EC007D6CEE /* GoogleAuthM.swift in Sources */,
@@ -517,7 +523,6 @@
 		};
 		EFED71692ACB014A004ED7C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 127ABB592ACFB5CE007E8D5E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -547,7 +552,6 @@
 		};
 		EFED716A2ACB014A004ED7C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 127ABB592ACFB5CE007E8D5E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

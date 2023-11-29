@@ -6,11 +6,22 @@
 //
 
 import UIKit
+import Combine
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    private var cancellables: Set<AnyCancellable> = []
     
-    var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
+    init() {
+            super.init(nibName: nil, bundle: nil)
+            // Additional setup if needed
+        }
 
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+    var kakaoAuthManager: KakaoAuthM?  // KakaoAuthM 인스턴스를 저장하기 위한 프로퍼티
+    
     // 질병 선택 창
     lazy var illSelector: UIPickerView = {
         
@@ -28,6 +39,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -130,23 +142,33 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             testLabel.translatesAutoresizingMaskIntoConstraints = false
         }
 
-    var dataSource: [String] = []
+    var CautionSource: [String] = [] {
+            didSet {
+                // Reload or update your collection view when CautionSource is updated
+                cautionView.reloadData()
+            }
+        }
+    var CheckSource : [String] = []
 
-    lazy var cautionView: UICollectionView = { // 컬렉션 뷰 1
+    lazy var cautionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 30 // cell사이의 간격 설정
+        flowLayout.minimumLineSpacing = 30
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        
+        view.delegate = self
+        view.dataSource = self
+        view.register(MyCell.self, forCellWithReuseIdentifier: MyCell.id)
         return view
     }()
-    
-    lazy var checkListView: UICollectionView = { // 컬렉션 뷰2
+
+    lazy var checkListView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 30 // cell사이의 간격 설정
+        flowLayout.minimumLineSpacing = 30
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        
+        view.delegate = self
+        view.dataSource = self
+        view.register(MyCell.self, forCellWithReuseIdentifier: MyCell.id)
         return view
     }()
     
@@ -158,6 +180,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationItem.hidesBackButton = true
         
+        
         view.backgroundColor = .white
         
 //        if let userEmail = kakaoAuthManager?.userEmail {
@@ -167,7 +190,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             userName(userNicname)
          }
 
-        
         MainViewController()
         caution()
         checkList()
@@ -177,6 +199,21 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         setupDelegate()
         registerCell()
         cautionWindowSize()
+        
+        SharedData.shared.$userInfo
+                    .sink { [weak self] userInfo in
+                        guard let self = self else { return }
+                        // Handle updated userInfo here
+                        print("main updated userInfo: \(userInfo)")
+
+                        // Assuming userInfo is an array of strings
+                        self.CautionSource = userInfo
+                    }
+                    .store(in: &cancellables)
+        
+        
+        CheckSource = ["Check 1", "Check 2", "Check 3", "Check 4"]
+        
         
         cautionView.translatesAutoresizingMaskIntoConstraints = false
         checkListView.translatesAutoresizingMaskIntoConstraints = false
@@ -194,8 +231,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     private func setupDataSource() {
-        for i in 1...5 {
-            dataSource += ["\(i)"]
+        for i in 1...4 {
+            CautionSource += ["\(i)"]
+        }
+        for j in 1...4{
+            CheckSource += ["\(j)"]
         }
     }
 
@@ -263,13 +303,21 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+        if collectionView == cautionView {
+            return CautionSource.count
+        } else if collectionView == checkListView {
+            return CheckSource.count
+        }
+        return 0
     }
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCell.id, for: indexPath)
         if let cell = cell as? MyCell {
-            cell.model = dataSource[indexPath.item]
+            if collectionView == cautionView {
+                cell.model = CautionSource[indexPath.item]
+            } else if collectionView == checkListView {
+                cell.model = CheckSource[indexPath.item]
+            }
         }
 
         return cell
@@ -283,5 +331,3 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: cellWidth, height: cellHeight)
     }
 }
-
-
