@@ -2,8 +2,6 @@
 //  PillSearchViewController.swift
 //  dailyCare
 //
-//  Created by KimMinSeok on 11/27/23.
-//
 
 import UIKit
 import Combine
@@ -17,6 +15,7 @@ class PillSearchViewController: UIViewController, XMLParserDelegate{
     var pillItem = [String: String]()     // 영화 item Dictionary
     var entpName = ""
     @Published var itemName = ""
+    @Published var text = ""
     
     var dataSource: [String] = ["iOS", "iOS 앱", "iOS 앱 개발", "iOS 앱 개발 알아가기", "iOS 앱 개발 알아가기 jake"]
     private var cancellables: Set<AnyCancellable> = []
@@ -25,6 +24,7 @@ class PillSearchViewController: UIViewController, XMLParserDelegate{
     private let PILL_API_KEY = Bundle.main.object(forInfoDictionaryKey: "PILL_API_KEY") as? String
     func requestApiInfo(Url : String) {
         // OPEN API 주소
+        self.pillItems.removeAll()
         // 1. URL 만들기
         guard let PILL_API_KEY = PILL_API_KEY else { return }
         // Your original API request code
@@ -42,7 +42,6 @@ class PillSearchViewController: UIViewController, XMLParserDelegate{
                 let xmlParser = XMLParser(data: data)
                 // 이제 xmlParser를 사용하여 데이터를 파싱하고 필요한 작업을 수행할 수 있습니다.
                 xmlParser.delegate = self;
-                self.pillItems.removeAll() // 기존 데이터 초기화
                 xmlParser.parse()
             }
         }.resume() // URLSession 작업 시작
@@ -78,13 +77,13 @@ class PillSearchViewController: UIViewController, XMLParserDelegate{
                 var concatenatedText = ""
 
                 // Clear the dataSource array before adding new item names
-                dataSource.removeAll()
+                self.dataSource.removeAll()
 
                 for i in itemNa {
                     if let itemName = i["itemName"]?.trimmingCharacters(in: .whitespacesAndNewlines) {
                         concatenatedText += itemName + " "
                         print("Item Name: \(itemName)")
-                        dataSource.append(itemName)
+                        self.dataSource.append(itemName)
                     }
 //                    print(dataSource)
                 }
@@ -140,6 +139,7 @@ class PillSearchViewController: UIViewController, XMLParserDelegate{
 
             pillItems.append(newItem)
         }
+        print("hello pillitems",pillItems)
     }
 
     public func parser(_ parser: XMLParser, foundCharacters string: String) {
@@ -193,26 +193,22 @@ extension PillSearchViewController: UISearchResultsUpdating {
         $pillItems
             .sink { [weak self] itemNa in
                 guard let self = self else { return }
-//                print("semail changed to: \(itemNa ?? [])")
-                print("=================================================")
+                print("semail changed to: \(itemNa ?? [])")
+
                 var concatenatedText = ""
 
                 // Clear the dataSource array before adding new item names
-                dataSource.removeAll()
-
+                self.dataSource.removeAll()
                 for i in itemNa {
                     if let itemName = i["itemName"]?.trimmingCharacters(in: .whitespacesAndNewlines) {
                         concatenatedText += itemName + " "
-//                        print("Item Name: \(itemName)")
-                        dataSource.append(itemName)
+                        self.dataSource.append(itemName)
                     }
-                    print(dataSource)
                 }
 
                 DispatchQueue.main.async {
-                    print("-------Hello")
+                    print("=====1==========", self.dataSource)
                     self.tableView.reloadData()
-                    // helloLabel.text = concatenatedText
                 }
             }
             .store(in: &cancellables)

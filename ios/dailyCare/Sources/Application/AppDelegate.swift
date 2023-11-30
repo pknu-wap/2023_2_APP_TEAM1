@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  dailyCare
 //
-//
 
 import UIKit
 import KakaoSDKCommon
@@ -17,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
         // Override point for customization after application launch.
+
         // 카카오 key값
         if let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] as? String {
             KakaoSDK.initSDK(appKey: nativeAppKey)
@@ -32,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (AuthApi.isKakaoTalkLoginUrl(url)) {
+            print(url)
             return AuthController.handleOpenUrl(url: url)
         }
         // Google 로그인 URL 핸들링

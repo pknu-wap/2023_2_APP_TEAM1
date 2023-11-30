@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  Login
+//  LoginMainViewController.swift
+//  dailyCare
 //
 
 import UIKit

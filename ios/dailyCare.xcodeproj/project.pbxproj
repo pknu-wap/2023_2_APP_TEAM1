@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		12080C212B15A42500669617 /* DiseasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12080C1F2B15A42400669617 /* DiseasePageViewController.swift */; };
 		12080C222B15A42500669617 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12080C202B15A42400669617 /* MyPageViewController.swift */; };
+		1219EC192B18502800459D7B /* Config.xcconfig in Sources */ = {isa = PBXBuildFile; fileRef = 1219EC182B18502800459D7B /* Config.xcconfig */; };
+		1219EC1B2B18503200459D7B /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 1219EC1A2B18503200459D7B /* GoogleService-Info.plist */; };
+		1219EC202B18544900459D7B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1219EC1F2B18544900459D7B /* UserInfo.swift */; };
 		1237AFC62B142EC6009B05CA /* PillSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */; };
 		1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE12B01DA3500EEDF28 /* TestViewController.swift */; };
 		1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */; };
@@ -54,13 +57,10 @@
 		12DC70392B142518003D1E49 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC70382B142518003D1E49 /* TabBarViewController.swift */; };
 		12E7BECD2ADAB8510003F123 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 12E7BECC2ADAB8510003F123 /* GoogleSignIn */; };
 		12E7BECF2ADAB8510003F123 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12E7BECE2ADAB8510003F123 /* GoogleSignInSwift */; };
-		EF048FE62B15CB3500D84B54 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EF048FE52B15CB3500D84B54 /* Config.xcconfig */; };
-		EF048FE82B15CB3C00D84B54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF048FE72B15CB3C00D84B54 /* GoogleService-Info.plist */; };
-		EF048FEA2B1755F400D84B54 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF048FE92B1755F400D84B54 /* UserInfo.swift */; };
 		EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71572ACB0148004ED7C7 /* AppDelegate.swift */; };
 		EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */; };
-		EFED71612ACB014A004ED7C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFED71602ACB014A004ED7C7 /* Assets.xcassets */; };
-		EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFED71622ACB014A004ED7C7 /* LaunchScreen.storyboard */; };
+		EFED71612ACB014A004ED7C7 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = EFED71602ACB014A004ED7C7 /* Assets.xcassets */; };
+		EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = EFED71622ACB014A004ED7C7 /* LaunchScreen.storyboard */; };
 		EFED716D2ACB02B1004ED7C7 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = EFED716C2ACB02B1004ED7C7 /* KakaoSDK */; };
 		EFED716F2ACB02B1004ED7C7 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EFED716E2ACB02B1004ED7C7 /* KakaoSDKAuth */; };
 		EFED71712ACB02B1004ED7C7 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = EFED71702ACB02B1004ED7C7 /* KakaoSDKCert */; };
@@ -80,6 +80,9 @@
 /* Begin PBXFileReference section */
 		12080C1F2B15A42400669617 /* DiseasePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiseasePageViewController.swift; sourceTree = "<group>"; };
 		12080C202B15A42400669617 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		1219EC182B18502800459D7B /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		1219EC1A2B18503200459D7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1219EC1F2B18544900459D7B /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillSearchViewController.swift; sourceTree = "<group>"; };
 		1284FBE12B01DA3500EEDF28 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
@@ -91,10 +94,6 @@
 		12B8BBAE2B171FD500C35FBA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		12DC70362B142453003D1E49 /* CalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalViewController.swift; sourceTree = "<group>"; };
 		12DC70382B142518003D1E49 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		EF048FE52B15CB3500D84B54 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = ../../../../../../Downloads/Config.xcconfig; sourceTree = "<group>"; };
-		EF048FE72B15CB3C00D84B54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EF048FE92B1755F400D84B54 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		EFED71542ACB0148004ED7C7 /* dailyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFED71572ACB0148004ED7C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,24 +161,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12B8BBA62B171FCB00C35FBA /* Main */ = {
+		1219EC1C2B18517A00459D7B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
+				EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1219EC1D2B18526200459D7B /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				12B8BBA82B171FCB00C35FBA /* MainViewController.swift */,
+				12B8BBAE2B171FD500C35FBA /* LoginViewController.swift */,
+				12DC70362B142453003D1E49 /* CalViewController.swift */,
+				1284FBE12B01DA3500EEDF28 /* TestViewController.swift */,
+				129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */,
+				12DC70382B142518003D1E49 /* TabBarViewController.swift */,
+				1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */,
+				12080C1F2B15A42400669617 /* DiseasePageViewController.swift */,
+				12080C202B15A42400669617 /* MyPageViewController.swift */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		1219EC1E2B18540D00459D7B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				12B8BBA72B171FCB00C35FBA /* MyCell.swift */,
-				12B8BBA82B171FCB00C35FBA /* MainViewController.swift */,
 			);
-			path = Main;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		12B8BBA62B171FCB00C35FBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1219EC1F2B18544900459D7B /* UserInfo.swift */,
+				1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		12B8BBAB2B171FD500C35FBA /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				12DE5B9D2AEF937E0080E1FC /* MainViewController.swift */,
-				1284FBE42B03B1AE00EEDF28 /* MyCell.swift */,
-				EF048FE92B1755F400D84B54 /* UserInfo.swift */,
 				12B8BBAC2B171FD500C35FBA /* GoogleAuthM.swift */,
 				12B8BBAD2B171FD500C35FBA /* KakaoAuthM.swift */,
-				12B8BBAE2B171FD500C35FBA /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -187,16 +215,11 @@
 		12DB4A502ACEB30300308BC6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				12B8BBA62B171FCB00C35FBA /* Main */,
+				1219EC1E2B18540D00459D7B /* Cells */,
+				1219EC1D2B18526200459D7B /* VCs */,
+				1219EC1C2B18517A00459D7B /* Application */,
+				12B8BBA62B171FCB00C35FBA /* Models */,
 				12B8BBAB2B171FD500C35FBA /* Login */,
-				12DC70362B142453003D1E49 /* CalViewController.swift */,
-				1284FBE12B01DA3500EEDF28 /* TestViewController.swift */,
-				129B6AF62B15C9D000B952A8 /* mediPageViewController.swift */,
-				1284FBE62B04E0CA00EEDF28 /* ApiParser.swift */,
-				12DC70382B142518003D1E49 /* TabBarViewController.swift */,
-				1237AFC52B142EC6009B05CA /* PillSearchViewController.swift */,
-				12080C1F2B15A42400669617 /* DiseasePageViewController.swift */,
-				12080C202B15A42400669617 /* MyPageViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -215,11 +238,9 @@
 			children = (
 				12DB4A512ACEB43D00308BC6 /* Storyboards */,
 				EFED71652ACB014A004ED7C7 /* Info.plist */,
-				EF048FE52B15CB3500D84B54 /* Config.xcconfig */,
-				EF048FE72B15CB3C00D84B54 /* GoogleService-Info.plist */,
-				EFED71572ACB0148004ED7C7 /* AppDelegate.swift */,
+				1219EC182B18502800459D7B /* Config.xcconfig */,
+				1219EC1A2B18503200459D7B /* GoogleService-Info.plist */,
 				EFED71602ACB014A004ED7C7 /* Assets.xcassets */,
-				EFED71592ACB0148004ED7C7 /* SceneDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -363,10 +384,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Resources */,
-				EF048FE82B15CB3C00D84B54 /* GoogleService-Info.plist in Resources */,
-				EF048FE62B15CB3500D84B54 /* Config.xcconfig in Resources */,
-				EFED71612ACB014A004ED7C7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,8 +398,8 @@
 				1284FBE22B01DA3500EEDF28 /* TestViewController.swift in Sources */,
 				12DC70372B142453003D1E49 /* CalViewController.swift in Sources */,
 				129B6AF72B15C9D000B952A8 /* mediPageViewController.swift in Sources */,
+				1219EC202B18544900459D7B /* UserInfo.swift in Sources */,
 				12DC70392B142518003D1E49 /* TabBarViewController.swift in Sources */,
-				EF048FEA2B1755F400D84B54 /* UserInfo.swift in Sources */,
 				1284FBE72B04E0CA00EEDF28 /* ApiParser.swift in Sources */,
 				12B8BBB12B171FD500C35FBA /* LoginViewController.swift in Sources */,
 				12B8BBAA2B171FCB00C35FBA /* MainViewController.swift in Sources */,
@@ -390,6 +407,10 @@
 				12080C222B15A42500669617 /* MyPageViewController.swift in Sources */,
 				EFED71582ACB0148004ED7C7 /* AppDelegate.swift in Sources */,
 				12B8BBA92B171FCB00C35FBA /* MyCell.swift in Sources */,
+				EFED71642ACB014A004ED7C7 /* LaunchScreen.storyboard in Sources */,
+				1219EC192B18502800459D7B /* Config.xcconfig in Sources */,
+				EFED71612ACB014A004ED7C7 /* Assets.xcassets in Sources */,
+				1219EC1B2B18503200459D7B /* GoogleService-Info.plist in Sources */,
 				EFED715A2ACB0148004ED7C7 /* SceneDelegate.swift in Sources */,
 				12B8BBAF2B171FD500C35FBA /* GoogleAuthM.swift in Sources */,
 				1237AFC62B142EC6009B05CA /* PillSearchViewController.swift in Sources */,
@@ -526,6 +547,7 @@
 		};
 		EFED71692ACB014A004ED7C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1219EC182B18502800459D7B /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -555,6 +577,7 @@
 		};
 		EFED716A2ACB014A004ED7C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1219EC182B18502800459D7B /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

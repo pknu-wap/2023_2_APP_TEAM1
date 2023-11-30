@@ -2,8 +2,7 @@
 //  ApiParser.swift
 //  dailyCare
 //
-//  Created by KimMinSeok on 11/15/23.
-//
+// Api를 받아오는 클래스
 
 import Foundation
 import UIKit

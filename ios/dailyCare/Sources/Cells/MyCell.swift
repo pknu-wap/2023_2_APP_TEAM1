@@ -70,12 +70,17 @@ class MyCell: UICollectionViewCell {
         // 그라데이션 레이어를 셀의 레이어로 추가
         layer.insertSublayer(gradientLayer, at: 0)
   
-        layer.cornerRadius = 20
+        layer.cornerRadius = 15
+        layer.masksToBounds = true
     }
 
     private func bind() {
-        titleLabel.text = model
-        bottomRightLabel.text = model // You can replace this with the appropriate text for the bottom-right label
+        print(SharedData.shared.userInfo)
+        guard !SharedData.shared.userInfo.isEmpty else {
+            return
+        }
+        titleLabel.text = SharedData.shared.userInfo[0][2]
+        bottomRightLabel.text = SharedData.shared.userInfo[0][0] + " " + SharedData.shared.userInfo[0][1]
     }
 }
 

@@ -1,9 +1,8 @@
 //
 //  KakaoAuthViewM.swift
-//  kakaologinUIkit
+//  dailyCare
 //
-//  Created by 서성원 on 2023/10/02.
-//
+// 카카오 로그인을 위한 파일
 
 import Foundation
 import Combine

@@ -1,8 +1,6 @@
 //
-//  DiseaseViewController.swift
+//  mediPageViewController.swift
 //  dailyCare
-//
-//  Created by 노현민 on 11/27/23.
 //
 
 import Foundation

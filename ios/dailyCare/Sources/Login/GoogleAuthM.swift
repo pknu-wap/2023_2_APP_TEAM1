@@ -1,3 +1,9 @@
+//
+//  GoogleAuthM.swift
+//  dailyCare
+//
+// 구글 로그인을 위한 파일
+
 import Foundation
 import Firebase
 import FirebaseAuth

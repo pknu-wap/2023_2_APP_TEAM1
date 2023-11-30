@@ -1,8 +1,6 @@
 //
-//  ViewController.swift
-//  CarouselView
-//
-//  Created by 김종권 on 2021/07/19.
+//  MainViewController.swift
+//  dailyCare
 //
 
 import UIKit
@@ -13,7 +11,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     init() {
             super.init(nibName: nil, bundle: nil)
-            // Additional setup if needed
         }
 
         required init?(coder: NSCoder) {
@@ -181,48 +178,34 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationItem.hidesBackButton = true
         
-        
         view.backgroundColor = .white
-        
-        if let userEmail = kakaoAuthVM.userEmail {
-            print(userEmail)
-            userName(userEmail)
-         }
-
-        let userEmail = KakaoAuthM.shared.userEmail ?? "N/A"
-        let userNickname = KakaoAuthM.shared.userNickname
-        
-        if let userNicname = kakaoAuthVM.userNickname {
-            print(userNicname)
-            userName(userNicname)
-         }
-        print(userEmail)
-        print("hello")
         MainViewController()
         caution()
         checkList()
 
-        setupDataSource()
+        setupDataSource(test: [[""]])
+        
         addSubviews()
         setupDelegate()
         registerCell()
         cautionWindowSize()
         
         SharedData.shared.$userInfo
-                    .sink { [weak self] userInfo in
-                        guard let self = self else { return }
-                        // Handle updated userInfo here
-                        print("main updated userInfo: \(userInfo)")
+            .sink { [weak self] userInfo in
+                guard let self = self, !userInfo.isEmpty else { return }
+                
+                // Handle updated userInfo here
+                print("main updated userInfo: \(userInfo)")
 
-                        // Assuming userInfo is an array of strings
-                        self.CautionSource = userInfo
-                    }
-                    .store(in: &cancellables)
-        
-        
-        CheckSource = ["Check 1", "Check 2", "Check 3", "Check 4"]
-        
-        
+                // Assuming userInfo is an array of strings
+                self.CautionSource += userInfo[0]
+                print(CautionSource)
+                
+                // Reload or update your collection views here
+                self.cautionView.reloadData()
+            }
+            .store(in: &cancellables)
+        CheckSource = ["check1","check2","check3","check4"]
         cautionView.translatesAutoresizingMaskIntoConstraints = false
         checkListView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -238,14 +221,14 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         userName(Nickname)
     }
     
-    private func setupDataSource() {
-        for i in 1...4 {
-            CautionSource += ["\(i)"]
+    private func setupDataSource(test: [[String]]) {
+        for item in test {
+            CautionSource.append(contentsOf: item)
         }
-        for j in 1...4{
-            CheckSource += ["\(j)"]
-        }
+        // Other logic...
     }
+
+
 
     private func addSubviews() {
             // 컨테이너 뷰 생성

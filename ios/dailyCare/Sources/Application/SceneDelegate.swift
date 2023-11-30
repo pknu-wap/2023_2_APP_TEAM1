@@ -1,8 +1,6 @@
 //
 //  SceneDelegate.swift
-//  kakaologinUIkit
-//
-//  Created by 서성원 on 2023/10/02.
+//  dailyCare
 //
 
 import UIKit
@@ -18,9 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //MARK: -push 방식을 위한 선언
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-                let loginViewController = UINavigationController(rootViewController: PillSearchViewController())
+                let rootVC = UINavigationController(rootViewController: LoginViewController())
                 
-                window?.rootViewController = loginViewController
+                window?.rootViewController = rootVC
                 window?.makeKeyAndVisible()
     }
     

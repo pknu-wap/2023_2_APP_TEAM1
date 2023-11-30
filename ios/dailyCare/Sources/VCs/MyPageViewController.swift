@@ -2,8 +2,6 @@
 //  MyPageViewController.swift
 //  dailyCare
 //
-//  Created by 노현민 on 11/9/23.
-//
 
 import Foundation
 import UIKit

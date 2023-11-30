@@ -1,3 +1,7 @@
+//
+//  CalViewController.swift
+//  dailyCare
+//
 import UIKit
 import SnapKit
 
@@ -161,11 +165,9 @@ class CalViewController: UIViewController, UITextFieldDelegate {
         if let selectedDate = date, let timeString = time, let cautionString = caution, let illnessString = illness {
             let formattedDate = formatter.string(from: Calendar.current.date(from: selectedDate)!)
             
+            
             // Use the shared data model
-            SharedData.shared.userInfo.append(formattedDate)
-            SharedData.shared.userInfo.append(timeString)
-            SharedData.shared.userInfo.append(cautionString)
-            SharedData.shared.userInfo.append(illnessString)
+            SharedData.shared.userInfo.append([formattedDate,timeString,cautionString,illnessString])
             
 //            print("사용자 정보: \(SharedData.shared.userInfo)")
         }
