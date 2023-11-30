@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/TimerFragment"
-        android:name="com.example.dailycare.TimerFragment"
+        android:name="com.example.dailycare.timerset.TimerFragment"
         android:label="fragment_timer"
         tools:layout="@layout/fragment_timer" />
     <fragment

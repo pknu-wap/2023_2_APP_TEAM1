@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dailycare.databinding.ChecklistRecyclerviewItemBinding
+import com.example.dailycare.timerset.SharedViewModel
 
 class RecyclerViewChecklistAdapter : RecyclerView.Adapter<RecyclerViewChecklistAdapter.ChecklistViewHolder>() {
 
@@ -33,6 +34,8 @@ class RecyclerViewChecklistAdapter : RecyclerView.Adapter<RecyclerViewChecklistA
         holder: ChecklistViewHolder,
         position: Int
     ) {
+        val sharedViewModel = SharedViewModel()
+
         holder.bind(checklistDataItems[position])
     }
 
