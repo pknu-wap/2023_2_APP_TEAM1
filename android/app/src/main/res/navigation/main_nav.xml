@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.dailycare.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/MyPageFragment"
+        android:name="com.example.dailycare.MypageFragment"
+        android:label="fragment_mypage"
+        tools:layout="@layout/fragment_mypage" />
+    <fragment
+        android:id="@+id/MedicineInfoFragment"
+        android:name="com.example.dailycare.networks.MedicineInfoFragment"
+        android:label="fragment_medicine_info"
+        tools:layout="@layout/fragment_medicine_info" >
+        <action
+            android:id="@+id/action_MedicineInfoFragment_to_DrugMoreInfoFragment"
+            app:destination="@id/DrugMoreInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/TimerFragment"
+        android:name="com.example.dailycare.timerset.TimerFragment"
+        android:label="fragment_timer"
+        tools:layout="@layout/fragment_timer" />
+    <fragment
+        android:id="@+id/DrugMoreInfoFragment"
+        android:name="com.example.dailycare.networks.DrugMoreInfoFragment"
+        android:label="fragment_drug_more_info"
+        tools:layout="@layout/fragment_drug_more_info"
+        />
+</navigation>
