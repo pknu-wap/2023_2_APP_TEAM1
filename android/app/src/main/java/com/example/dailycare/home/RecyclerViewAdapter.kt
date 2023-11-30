@@ -1,4 +1,4 @@
-package com.example.dailycare
+package com.example.dailycare.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

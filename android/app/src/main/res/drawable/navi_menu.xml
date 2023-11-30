@@ -21,4 +21,9 @@
         android:title="마이"
         android:icon="@drawable/ic_mypage"/>
 
+    <item
+        android:id="@+id/DrugMoreInfoFragment"
+        android:title="상세 정보"
+        />
+
 </menu>

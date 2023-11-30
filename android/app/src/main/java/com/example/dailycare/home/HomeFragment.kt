@@ -1,4 +1,4 @@
-package com.example.dailycare
+package com.example.dailycare.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,13 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.DatePicker
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.dailycare.databinding.ActivityNaviBinding
+import com.example.dailycare.userinformation.UserViewModel
 import com.example.dailycare.databinding.FragmentHomeBinding
-import com.google.android.gms.common.internal.ResourceUtils
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -47,9 +45,11 @@ class HomeFragment : Fragment() {
         setFragmentResultListener("request") {
             key, bundle->
             bundle.getString("valueKey")?.let {
-                binding.usernameTextView.setText("${user}님")
+                binding.usernameTextView.text = userViewModel.getUserInformation().userName.toString()
             }
         }
+
+        binding.usernameTextView.text = userViewModel.getUserInformation().userName
 
     }
 
@@ -66,6 +66,8 @@ class HomeFragment : Fragment() {
     }
 
     fun setSpinner() {
+        val spinnerAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, diseaseData)
+        binding.spinner.adapter = spinnerAdapter
         binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -73,7 +75,7 @@ class HomeFragment : Fragment() {
                 position: Int,
                 id: Long
             ) {
-                // 선택하면 그에 맞는 현재 상황을 보여주기
+                userViewModel.setCurrentDisease(diseaseData.get(position))
             }
             override fun onNothingSelected(parent: AdapterView<*>?) { }
         }

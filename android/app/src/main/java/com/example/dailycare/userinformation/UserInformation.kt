@@ -1,10 +1,7 @@
-package com.example.dailycare
+package com.example.dailycare.userinformation
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.UserManager
-import com.google.firebase.auth.UserInfo
-import java.io.Serializable
 
 class UserInformation constructor(private val context: Context) {
     private val sharedPreferences: SharedPreferences =
@@ -17,17 +14,17 @@ class UserInformation constructor(private val context: Context) {
         get() = sharedPreferences.getString(KEY_USEREMAIL, null)
         set(value) = sharedPreferences.edit().putString(KEY_USEREMAIL, value).apply()
 
+    var userCurrentDisease = Disease()
+
     companion object {
+        private var instance : UserInformation? = null
+
         private const val USER_PREFS = "user_prefs"
         private const val KEY_USERNAME = "username"
         private const val KEY_USEREMAIL = "useremail"
-
-        @Volatile
-        private var instance : UserInformation? = null
-
         fun getInstance(context: Context): UserInformation {
-            return instance?: synchronized(this) {
-                instance?: buildInstance(context).also { instance = it }
+            return instance ?: synchronized(this) {
+                instance ?: buildInstance(context).also { instance = it }
             }
         }
 

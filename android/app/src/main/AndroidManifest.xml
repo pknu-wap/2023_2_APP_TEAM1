@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!--인터넷 권한 허용 -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!-- <application
-       android:usesCleartextTraffic="true" 인터넷 웹뷰로 불러올때 s를 만들어준다?
-       앱이 일반 텍스트 HTTP와 같은 일반 텍스트 네트워크 트래픽을 사용하는지 여부를 나타낸다.
-       -->
+    <!-- 인터넷 권한 허용 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,10 +15,14 @@
         android:theme="@style/Theme.DailyCare"
         tools:targetApi="31">
         <activity
+            android:name=".networks.DrugMoreInfoFragment"
+            android:exported="false" />
+        <activity
             android:name=".SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,7 +35,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

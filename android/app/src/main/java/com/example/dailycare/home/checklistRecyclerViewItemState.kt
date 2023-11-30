@@ -1,4 +1,4 @@
-package com.example.dailycare
+package com.example.dailycare.home
 
 data class checklistRecyclerViewItemState (
     val checklistTitle: String,

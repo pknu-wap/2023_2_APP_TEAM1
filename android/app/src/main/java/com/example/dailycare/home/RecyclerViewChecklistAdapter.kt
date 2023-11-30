@@ -1,4 +1,4 @@
-package com.example.dailycare
+package com.example.dailycare.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -30,7 +30,7 @@ class RecyclerViewChecklistAdapter : RecyclerView.Adapter<RecyclerViewChecklistA
 
     override fun getItemCount(): Int = checklistDataItems.size
     override fun onBindViewHolder(
-        holder: RecyclerViewChecklistAdapter.ChecklistViewHolder,
+        holder: ChecklistViewHolder,
         position: Int
     ) {
         holder.bind(checklistDataItems[position])

@@ -1,6 +1,4 @@
-package com.example.dailycare
-
-import android.graphics.drawable.Drawable
+package com.example.dailycare.home
 
 data class WarningRecyclerViewItemStateData (
     val warningTitle: String,

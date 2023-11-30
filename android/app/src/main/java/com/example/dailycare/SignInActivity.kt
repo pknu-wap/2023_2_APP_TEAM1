@@ -3,12 +3,10 @@ package com.example.dailycare
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.viewModels
+import com.example.dailycare.userinformation.UserViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -16,8 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 class SignInActivity : AppCompatActivity() {
-
-    private lateinit var userViewModel: UserViewModel
+    val userViewModel: UserViewModel by viewModels()
     companion object {
         private const val RC_SIGN_IN = 9001
     }
@@ -28,14 +25,14 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+//        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         val userInformation = userViewModel.getUserInformation()
 
         auth = FirebaseAuth.getInstance()
 
         val currentUser = auth.currentUser
 
-        userInformation.userName = currentUser?.uid
+        userInformation.userName = auth.currentUser?.displayName
         userInformation.email = currentUser?.email
 
         if (currentUser != null) {
