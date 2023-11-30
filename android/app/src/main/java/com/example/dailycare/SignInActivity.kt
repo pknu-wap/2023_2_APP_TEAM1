@@ -35,7 +35,7 @@ class SignInActivity : AppCompatActivity() {
 
         if (currentUser != null) {
             // The user is already signed in, navigate to MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, NaviActivity::class.java)
             startActivity(intent)
             finish() // finish the current activity to prevent the user from coming back to the SignInActivity using the back button
         }
@@ -81,7 +81,7 @@ class SignInActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     Toast.makeText(this, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, NaviActivity::class.java))
                     finish()
                 } else {
                     Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()
