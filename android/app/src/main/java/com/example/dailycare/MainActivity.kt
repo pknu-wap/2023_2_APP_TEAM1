@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
         Log.v(TAG, "Not Error in GSO")
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-
-
         val textView = findViewById<TextView>(R.id.name)
 
         val auth = Firebase.auth
@@ -48,29 +46,20 @@ class MainActivity : AppCompatActivity() {
             // Handle the case where the user is not signed in
         }
 
-
-
-// Inside onCreate() method
         val sign_out_button = findViewById<Button>(R.id.logout_button)
         sign_out_button.setOnClickListener {
             signOutAndStartSignInActivity()
         }
-
-
-
-
     }
-
 
     private fun signOutAndStartSignInActivity() {
         mAuth.signOut()
 
         mGoogleSignInClient.signOut().addOnCompleteListener(this) {
             // Optional: Update UI or show a message to the user
-            val intent = Intent(this@MainActivity, SignInActivity::class.java)
+            val intent = Intent(this, NaviActivity::class.java)
             startActivity(intent)
             finish()
         }
-
     }
 }

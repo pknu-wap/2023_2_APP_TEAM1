@@ -13,7 +13,11 @@
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="match_parent"
+=======
+            android:layout_height="0dp"
+>>>>>>> 50401a32386805c7e7d83fe806427121b53b6fed
             app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
             app:layout_constraintEnd_toStartOf="parent"
@@ -27,7 +31,12 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
+=======
+            app:layout_constraintTop_toBottomOf="@id/nav_host_fragment"
+>>>>>>> 50401a32386805c7e7d83fe806427121b53b6fed
             app:menu="@menu/nav_menu" />
 
 

@@ -9,20 +9,57 @@
         android:id="@+id/homeFragment"
         android:name="com.example.dailycare.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_MedicineInfoFragment"
+            app:destination="@id/MedicineInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_TimerFragment"
+            app:destination="@id/TimerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_MyPageFragment"
+            app:destination="@id/MyPageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/MyPageFragment"
         android:name="com.example.dailycare.MypageFragment"
         android:label="fragment_mypage"
-        tools:layout="@layout/fragment_mypage" />
+        tools:layout="@layout/fragment_mypage" >
+        <action
+            android:id="@+id/action_MyPageFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_MyPageFragment_to_TimerFragment"
+            app:destination="@id/TimerFragment" />
+        <action
+            android:id="@+id/action_MyPageFragment_to_MedicineInfoFragment"
+            app:destination="@id/MedicineInfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/MedicineInfoFragment"
         android:name="com.example.dailycare.MedicineInfoFragment"
         android:label="fragment_medicine_info"
-        tools:layout="@layout/fragment_medicine_info" />
+        tools:layout="@layout/fragment_medicine_info" >
+        <action
+            android:id="@+id/action_MedicineInfoFragment_to_TimerFragment"
+            app:destination="@id/TimerFragment" />
+        <action
+            android:id="@+id/action_MedicineInfoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_MedicineInfoFragment_to_MyPageFragment"
+            app:destination="@id/MyPageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/TimerFragment"
         android:name="com.example.dailycare.TimerFragment"
         android:label="fragment_timer"
-        tools:layout="@layout/fragment_timer" />
+        tools:layout="@layout/fragment_timer" >
+        <action
+            android:id="@+id/action_TimerFragment_to_MyPageFragment"
+            app:destination="@id/MyPageFragment" />
+        <action
+            android:id="@+id/action_TimerFragment_to_MedicineInfoFragment"
+            app:destination="@id/MedicineInfoFragment" />
+    </fragment>
 </navigation>

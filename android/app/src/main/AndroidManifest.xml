@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
+=======
+    <!--인터넷 권한 허용 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- <application
+       android:usesCleartextTraffic="true" 인터넷 웹뷰로 불러올때 s를 만들어준다?
+       앱이 일반 텍스트 HTTP와 같은 일반 텍스트 네트워크 트래픽을 사용하는지 여부를 나타낸다.
+       -->
+>>>>>>> 50401a32386805c7e7d83fe806427121b53b6fed
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
